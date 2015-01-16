@@ -248,6 +248,8 @@ module.exports = function(options) {
 
 		options = options || {};
 
+		var browserLocale = window.navigator.language || window.navigator.userLanguage ; // Everyone else, IE
+
 		// Set default options
 		var browserSupport = options.browserSupport || {
 				'Chrome': 37,
@@ -259,7 +261,7 @@ module.exports = function(options) {
 			requiredCssProperty = options.requiredCssProperty || false, // CSS property to check for. You may also like 'borderSpacing', 'boxShadow', 'transform', 'borderImage';
 			backgroundColor = options.backgroundColor || '#f25648', // Salmon
 			textColor = options.textColor || 'white',
-			language = options.language || navigator.language.slice(0, 2); // Language code
+			language = options.language || browserLocale.slice(0, 2); // Language code
 
 		var updateSource = 'web' // Other possible values are 'googlePlay' or 'appStore'. Determines where we tell users to go for upgrades.
 
