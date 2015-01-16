@@ -2,7 +2,7 @@
 
 Detects outdated browsers and advises users to upgrade to a new version. Handles mobile devices!
 
-This is a fork of (Burocratik)[http://www.burocratik.com]'s excellent Outdated Browser, adding a number of new features.
+This is a fork of [Burocratik](http://www.burocratik.com)'s excellent Outdated Browser, adding a number of new features.
 
 ## Usage
 
@@ -25,8 +25,9 @@ If you like, specify options, eg:
 
 #### Options
 
-__browserSupport__:Object - A matrix of browsers and their major versions - see above for demo. Anything less will be unsupported.
-__requiredCssProperty__:String - A CSS property that must be supported.
+ - __browserSupport__:Object - A matrix of browsers and their major versions - see above for demo. Anything less will be unsupported.
+ - __requiredCssProperty__:String - A CSS property that must be supported.
+ - __requireChromeOnAndroid__:Boolean - Ask Android users to install Chrome.
 
 ### SCSS
 
@@ -36,10 +37,10 @@ __requiredCssProperty__:String - A CSS property that must be supported.
 
  - Add explicit browser support via the __browserSupport__ option
  - Add mobile support. Users on iOS and Android will be directed to the Apple App Store and Google Play respectively.
- - Add new __requireChromeOnAndroid__ and __requireCurrentiOS__ option
+ - Add new __requireChromeOnAndroid__ option
  - Be an NPM module
  - Use SASS (specifically SCSS)
- - No AJAX, languages is only 8K and removing the AJAX library has made the code substantially shorter.
+ - No AJAX, languages are only 8K and removing the AJAX library has made the code substantially shorter.
 
 And some code fixes:
 
@@ -57,7 +58,3 @@ There's still some TODOs from the original code:
 
 This rework is made by Mike MacCana.
 The original Outdated Browser is made with love at [Bürocratik](http://burocratik.com)
-
-## License
-
-[MIT License](http://zenorocha.mit-license.org/)
