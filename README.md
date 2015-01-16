@@ -54,6 +54,7 @@ There's still some TODOs from the original code:
 
  - Try and eliminate IDs
  - Move all styling into SCSS
+ - Re-do Farsi (RTL) support from original Outdated Browser
 
 ## Author
 
