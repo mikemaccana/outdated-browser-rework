@@ -241,7 +241,7 @@ module.exports = function(options) {
 
 	var main = function(){
 
-		var parsedUserAgent = new UserAgentParser(window.navigator.userAgent).getResult();
+		var parsedUserAgent = new UserAgentParser().getResult();
 
 		// Variable definition (before ajax)
 		var outdatedUI = document.getElementById("outdated");
