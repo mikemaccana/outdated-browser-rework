@@ -1,7 +1,7 @@
 {
 	"name": "outdated-browser-rework",
 	"description": "Detects outdated browsers and asks users to upgrade to a new version. Handles mobile devices!",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"main": "index.js",
 	"dependencies": {
 		"user-agent-parser": "^0.6.0"

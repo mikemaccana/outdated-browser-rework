@@ -1,10 +1,14 @@
 $salmon: #f25648;
 
+$primaryColor: $salmon;
+$secondaryColor: white;
+
 #outdated {
 	position:absolute;
-	background-color: $salmon;
-	color: #fff;
-	display:none;
+	background-color: $primaryColor;
+	color: $secondaryColor;
+	display: none;
+	overflow: hidden;
 	left: 0;
 	position: fixed;
 	text-align: center;
@@ -12,11 +16,12 @@ $salmon: #f25648;
 	top: 0;
 	width: 100%;
 	z-index: 1500;
+	padding: 24px;
 
 	h6 {
 		font-size: 25px;
 		line-height: 25px;
-		margin: 30px 0 10px;
+		margin: 12px 0;
 	}
 
 	p {
@@ -26,8 +31,8 @@ $salmon: #f25648;
 	}
 
 	#buttonUpdateBrowser {
-		border: 2px solid #fff;
-		color: #fff;
+		border: 2px solid $secondaryColor;
+		color: $secondaryColor;
 		cursor: pointer;
 		display: block;
 		margin: 30px auto 0;
@@ -36,8 +41,8 @@ $salmon: #f25648;
 		text-decoration: none;
 		width: 230px;
 		&:hover {
-			background-color:#fff;
-			color: $salmon;
+			background-color:$secondaryColor;
+			color: $primaryColor;
 		}
 	}
 
@@ -55,7 +60,7 @@ $salmon: #f25648;
 	}
 
 	#buttonCloseUpdateBrowser {
-		color: #fff;
+		color: $secondaryColor;
 		display: block;
 		font-size: 36px;
 		height: 100%;

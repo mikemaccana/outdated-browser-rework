@@ -287,8 +287,7 @@ module.exports = function(options) {
 		var fadeIn = function(opacityValue) {
 			changeOpacity(opacityValue);
 			if (opacityValue == 1) {
-				// Hack to make div expand to fill contents
-				outdatedUI.style.display = 'table';
+				outdatedUI.style.display = 'block';
 			}
 			if (opacityValue == 100) {
 				done = true;
@@ -336,7 +335,7 @@ module.exports = function(options) {
 			};
 		}
 
-		//events and colors
+		// Style element explicitly - TODO: investigate and delete if not needed
 		var startStylesAndEvents = function(){
 			var buttonClose = document.getElementById("buttonCloseUpdateBrowser");
 			var buttonUpdate = document.getElementById("buttonUpdateBrowser");
