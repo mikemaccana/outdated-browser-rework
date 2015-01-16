@@ -47,7 +47,7 @@ And some code fixes:
 
  - Pass jshint
  - Remove HTML entities. It's 2015, we have unicode now.
- - Included Vanilla JS onload option - since current jQuery no longer supports old browsers.
+ - Included Vanilla JS onload option - that way you can keep using jQuery 2 and not have to revert to 1.x just to show messages to old browsers.
  - Simplify some variable and function names
 
 There's still some TODOs from the original code:
