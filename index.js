@@ -263,13 +263,15 @@ module.exports = function(options) {
 
 		var updateSource = 'web' // Other possible values are 'googlePlay' or 'appStore'. Determines where we tell users to go for upgrades.
 
+		// Chrome mobile is still Chrome (unlike Safari which is 'Mobile Safari')
+		var isAndroid = parsedUserAgent.os.name === "Android"
+		if ( isAndroid ) {
+			updateSource = 'googlePlay'
+		}
+
 		var isAndroidButNotChrome;
 		if ( options.requireChromeOnAndroid ) {
-			isAndroidButNotChrome = window.navigator.userAgent.match(/Android/) && ( ! window.chrome );
-			if ( isAndroidButNotChrome ) {
-				updateSource = 'googlePlay'
-				console.log('Android but not Chrome')
-			}
+			isAndroidButNotChrome = ( isAndroid ) && ( parsedUserAgent.browser.name !== "Chrome");
 		}
 
 		if ( parsedUserAgent.os.name === 'iOS' ) {

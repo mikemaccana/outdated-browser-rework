@@ -16,7 +16,7 @@ If you like, specify options, eg:
 
 	outdatedBrowserRework({
 		browserSupport: {
-			'Chrome': 37,
+			'Chrome': 37, // Includes Chrome for mobile devices
 			'IE': 10,
 			'Safari': 7,
 			'Mobile Safari': 7,
@@ -52,8 +52,8 @@ And some code fixes:
 
 There's still some TODOs from the original code:
 
- - Try and eliminate IDs
- - Move all styling into SCSS
+ - Try and eliminate IDs (they're JS globalks, so EUW)
+ - Move all styling into SCSS (need to test if this breaks old IEs)
  - Re-do Farsi (RTL) support from original Outdated Browser
 
 ## Author
