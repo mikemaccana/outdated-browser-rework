@@ -1,0 +1,68 @@
+$salmon: #f25648;
+
+#outdated {
+	position:absolute;
+	background-color: $salmon;
+	color: #fff;
+	display:none;
+	height: 170px;
+	left: 0;
+	position: fixed;
+	text-align: center;
+	text-transform:u ppercase;
+	top: 0;
+	width: 100%;
+	z-index: 1500;
+
+	h6 {
+		font-size: 25px;
+		line-height: 25px;
+		margin: 30px 0 10px;
+	}
+
+	p {
+		font-size: 12px;
+		line-height: 12px;
+		margin: 0;
+	}
+
+	#buttonUpdateBrowser {
+		border: 2px solid #fff;
+		color: #fff;
+		cursor: pointer;
+		display: block;
+		margin: 30px auto 0;
+		padding: 10px 20px;
+		position: relative;
+		text-decoration: none;
+		width: 230px;
+		&:hover {
+			background-color:#fff;
+			color: $salmon;
+		}
+	}
+
+	.last {
+		height: 20px;
+		position: absolute;
+		right: 25px;
+		top: 10px;
+		width: 0px;
+	}
+
+	.last[dir=rtl] {
+		left: 25px !important;
+		right: auto !important;
+	}
+
+	#buttonCloseUpdateBrowser {
+		color: #fff;
+		display: block;
+		font-size: 36px;
+		height: 100%;
+		line-height: 36px;
+		position: relative;
+		text-decoration: none;
+		width: 100%;
+	}
+}

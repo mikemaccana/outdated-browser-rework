@@ -8,7 +8,7 @@ This is a fork of [Burocratik](http://www.burocratik.com)'s excellent Outdated B
 
 ### JS
 
-	var outdatedBrowserRework = require("outdated-browser-fork");
+	var outdatedBrowserRework = require("outdated-browser-rework");
 
 	outdatedBrowserRework();
 
@@ -31,7 +31,7 @@ If you like, specify options, eg:
 
 ### SCSS
 
-	@import "vendor/card.scss";
+	@import "vendor/outdated-browser-rework.scss";
 
 ## Differences from Outdated Browser 1.1.0
 
