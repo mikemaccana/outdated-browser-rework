@@ -384,7 +384,7 @@ module.exports = function(options) {
 				updateMessage = '<p>'+messages.update[updateSource]+'</p>'
 			}
 			// TODO: button used for nothing
-			return '<h6>'+messages.outOfDate+'</h6>'+updateMessage+'<p class="last"><a href="#" id="buttonCloseUpdateBrowser" title="'+messages.close+'">&times;</a></p>';
+			return '<h6>'+messages.outOfDate+'</h6>'+updateMessage+'<p class="last"><a href="#" id="buttonCloseUpdateBrowser" title="'+messages.close+'">×</a></p>';
 		}
 
 		// Check if browser is supported
