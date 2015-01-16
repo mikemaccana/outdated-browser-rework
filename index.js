@@ -274,7 +274,7 @@ module.exports = function(options) {
 			}
 		}
 
-		if ( parsedUserAgent.os === 'iOS' ) {
+		if ( parsedUserAgent.os.name === 'iOS' ) {
 			updateSource = 'appStore'
 		}
 
