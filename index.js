@@ -243,9 +243,6 @@ module.exports = function(options) {
 
 		var parsedUserAgent = new UserAgentParser(window.navigator.userAgent).getResult();
 
-		// DEBUG DO NOT COMMIT
-		window.parsedUserAgent = parsedUserAgent
-
 		// Variable definition (before ajax)
 		var outdatedUI = document.getElementById("outdated");
 
@@ -256,6 +253,7 @@ module.exports = function(options) {
 				'Chrome': 37,
 				'IE': 10,
 				'Safari': 7,
+				'Mobile Safari': 7,
 				'Firefox':  32
 			},
 			requiredCssProperty = options.requiredCssProperty || false, // CSS property to check for. You may also like 'borderSpacing', 'boxShadow', 'transform', 'borderImage';
@@ -390,7 +388,7 @@ module.exports = function(options) {
 		}
 
 		// Check if browser is supported
-		if ( isBrowserOutOfDate() || ! isPropertySupported(requiredCssProperty) || isAndroidButNotChrome || isOutOfDateiOS ) {
+		if ( isBrowserOutOfDate() || ! isPropertySupported(requiredCssProperty) || isAndroidButNotChrome ) {
 
 			// This is an outdated browser
 			if (done && outdatedUI.style.opacity !== '1') {

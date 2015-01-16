@@ -19,6 +19,7 @@ If you like, specify options, eg:
 			'Chrome': 37,
 			'IE': 10,
 			'Safari': 7,
+			'Mobile Safari': 7,
 			'Firefox':	32
 		}
 	});
