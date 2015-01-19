@@ -319,14 +319,14 @@ module.exports = function(options) {
 				vendorPrefixes = 'Khtml Ms O Moz Webkit'.split(' '),
 				count = vendorPrefixes.length;
 
-			if ( prop in div.style ) return true;
+			if ( div.style[prop] ) return true;
 
 			prop = prop.replace(/^[a-z]/, function(val) {
 				return val.toUpperCase();
 			});
 
-			while(count--) {
-				if ( vendorPrefixes[count] + prop in div.style ) {
+			while (count--) {
+				if ( div.style[vendorPrefixes[count]+prop] ) {
 					return true;
 				}
 			}
