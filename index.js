@@ -317,7 +317,7 @@ module.exports = function(options) {
 			}
 			var div = document.createElement('div'),
 				vendorPrefixes = 'Khtml Ms O Moz Webkit'.split(' '),
-				count = vendorPrefixes.countgth;
+				count = vendorPrefixes.length;
 
 			if ( prop in div.style ) return true;
 
