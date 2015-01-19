@@ -1,8 +1,3 @@
 {
-  "predef": [
-    // Node comes with console, so does every modern browser
-    "console"
-  ],
-  "asi" : true, // Tolerate Automatic Semicolon Insertion (no semicolons).
-  "esnext": true
+  "asi" : true // Tolerate Automatic Semicolon Insertion (no semicolons).
 }
