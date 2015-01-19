@@ -379,11 +379,15 @@ module.exports = function(options) {
 
 		var getmessage = function(language){
 			var messages = languageMessages[language];
-			if ( updateSource === 'web' ) {
-				updateMessage = '<p>'+messages.update.web+'<a id="buttonUpdateBrowser" href="'+messages.url+'">'+messages.callToAction+'</a></p>'
-			} else {
-				updateMessage = '<p>'+messages.update[updateSource]+'</p>'
-			}
+
+			var updateMessages = {
+				'web': '<p>'+messages.update.web+'<a id="buttonUpdateBrowser" href="'+messages.url+'">'+messages.callToAction+'</a></p>',
+				'googlePlay': '<p>'+messages.update.googlePlay+'<a id="buttonUpdateBrowser" href="https://play.google.com/store/apps/details?id=com.android.chrome">'+messages.callToAction+'</a></p>',
+				'appStore':'<p>'+messages.update[updateSource]+'</p>'
+			};
+
+			var updateMessage = updateMessages[updateSource];
+
 			// TODO: button used for nothing
 			return '<h6>'+messages.outOfDate+'</h6>'+updateMessage+'<p class="last"><a href="#" id="buttonCloseUpdateBrowser" title="'+messages.close+'">×</a></p>';
 		};
