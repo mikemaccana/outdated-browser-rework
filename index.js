@@ -1,7 +1,4 @@
 var UserAgentParser = require('user-agent-parser');
-
-var log = console.log.bind(console);
-
 var languageMessages = {
 	"br":{
 		"outOfDate":"O seu navegador est&aacute; desatualizado!",
