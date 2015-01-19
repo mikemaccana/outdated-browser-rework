@@ -24,6 +24,14 @@ If you like, specify options, eg:
 		}
 	});
 
+Browsers that are __older__ than the versions supplied will see a message, depending on their platform:
+
+ - On desktop browsers, users will be directed to [outdatedbrowser.com](http://outdatedbrowser.com)
+ - on iOS devices, users will be asked to visit the Settings app and upgrade their OS.
+ - On Android devices, users will be directed to Chrome in Google Play.
+
+This module does not need jQuery.
+
 #### Options
 
  - __browserSupport__:Object - A matrix of browsers and their major versions - see above for demo. Anything less will be unsupported.
@@ -52,7 +60,7 @@ And some code fixes:
 
 There's still some TODOs from the original code:
 
- - Try and eliminate IDs (they're JS globalks, so EUW)
+ - Try and eliminate IDs (they're JS globals, so EUW)
  - Move all styling into SCSS (need to test if this breaks old IEs)
  - Re-do Farsi (RTL) support from original Outdated Browser
 
