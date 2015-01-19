@@ -24,11 +24,15 @@ If you like, specify options, eg:
 		}
 	});
 
+See below for more options.
+
 Browsers that are __older__ than the versions supplied will see a message, depending on their platform:
 
  - On desktop browsers, users will be directed to [outdatedbrowser.com](http://outdatedbrowser.com)
  - on iOS devices, users will be asked to visit the Settings app and upgrade their OS.
  - On Android devices, users will be directed to Chrome in Google Play.
+
+It's tested all the way from IE11 to IE6.
 
 This module does not need jQuery.
 
@@ -41,6 +45,49 @@ This module does not need jQuery.
 ### SCSS
 
 	@import "vendor/outdated-browser-rework.scss";
+
+## Integration Tips
+
+While we normally concatenate and combine files using `npm` and `brownserify`, it's best to invoke this particular package by itself, since other scripts may expect things like `console` and `function.bind()` to exist can won't work on old browsers.
+
+Eg: __your site runs on new browsers. Whatever bundles this has to work everywhere__. So read the following:
+
+### In your template
+
+In <head>, before anythign else:
+
+    <script src="/js/dist/oldbrowser.js"></script>
+
+### In `oldbrowser.js`
+
+Start `outdated-browser-rework` and call it with your preferred options:
+
+    var outdatedBrowserFork = require("outdated-browser-rework");
+
+    outdatedBrowserFork({
+    	browserSupport: {
+    		'Chrome': 37,
+    		'IE': 13,
+    		'Safari': 7,
+    		'Mobile Safari': 7,
+    		'Firefox': 32
+    	},
+    	requireChromeOnAndroid: true
+    })
+
+
+### In your gulpfile
+
+Add the following underneat your existing 'js' task:
+
+		gulp
+			.src('./public/js/src/oldbrowser.js')
+			.pipe(browserify({
+				debug : ! gulp.env.production
+			}))
+			.pipe(gulp.dest('./public/js/dist'))
+
+Doing this will mean that `oldbrowser` will only include `outdated-browser-rework` and its dependency `user-agent-parser`,without anything else to get in the way.
 
 ## Differences from Outdated Browser 1.1.0
 
