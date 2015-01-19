@@ -232,7 +232,7 @@ var languageMessages = {
 		"callToAction":"Оновити мій браузер ",
 		"close":"Close"
 	}
-}
+};
 
 module.exports = function(options) {
 
@@ -262,12 +262,12 @@ module.exports = function(options) {
 			textColor = options.textColor || 'white',
 			language = options.language || browserLocale.slice(0, 2); // Language code
 
-		var updateSource = 'web' // Other possible values are 'googlePlay' or 'appStore'. Determines where we tell users to go for upgrades.
+		var updateSource = 'web'; // Other possible values are 'googlePlay' or 'appStore'. Determines where we tell users to go for upgrades.
 
 		// Chrome mobile is still Chrome (unlike Safari which is 'Mobile Safari')
-		var isAndroid = parsedUserAgent.os.name === "Android"
+		var isAndroid = parsedUserAgent.os.name === "Android";
 		if ( isAndroid ) {
-			updateSource = 'googlePlay'
+			updateSource = 'googlePlay';
 		}
 
 		var isAndroidButNotChrome;
@@ -276,7 +276,7 @@ module.exports = function(options) {
 		}
 
 		if ( parsedUserAgent.os.name === 'iOS' ) {
-			updateSource = 'appStore'
+			updateSource = 'appStore';
 		}
 
 		// TODO: done what????
@@ -285,7 +285,7 @@ module.exports = function(options) {
 		var changeOpacity = function(opacityValue) {
 			outdatedUI.style.opacity = opacityValue / 100;
 			outdatedUI.style.filter = 'alpha(opacity=' + opacityValue + ')';
-		}
+		};
 
 		var fadeIn = function(opacityValue) {
 			changeOpacity(opacityValue);
@@ -295,7 +295,7 @@ module.exports = function(options) {
 			if (opacityValue == 100) {
 				done = true;
 			}
-		}
+		};
 
 		var isBrowserOutOfDate = function(){
 			var browserName = parsedUserAgent.browser.name;
@@ -306,8 +306,8 @@ module.exports = function(options) {
 					isOutOfDate = true;
 				}
 			}
-			return isOutOfDate
-		}
+			return isOutOfDate;
+		};
 
 		// Returns true if a browser supports a css3 property
 		var isPropertySupported = function(prop) {
@@ -330,13 +330,13 @@ module.exports = function(options) {
 				}
 			}
 			return false;
-		}
+		};
 
 		var makeFadeInFunction = function(x) {
 			return function () {
 				fadeIn(x);
 			};
-		}
+		};
 
 		// Style element explicitly - TODO: investigate and delete if not needed
 		var startStylesAndEvents = function(){
@@ -356,6 +356,7 @@ module.exports = function(options) {
 				if (buttonUpdate.style.borderColor) {
 					buttonUpdate.style.borderColor = textColor;
 				}
+
 				// Override the update button color to match the background color
 				buttonUpdate.onmouseover = function() {
 					this.style.color = backgroundColor;
@@ -374,9 +375,7 @@ module.exports = function(options) {
 				outdatedUI.style.display = 'none';
 				return false;
 			};
-
-
-		}
+		};
 
 		var getmessage = function(language){
 			var messages = languageMessages[language];
@@ -387,7 +386,7 @@ module.exports = function(options) {
 			}
 			// TODO: button used for nothing
 			return '<h6>'+messages.outOfDate+'</h6>'+updateMessage+'<p class="last"><a href="#" id="buttonCloseUpdateBrowser" title="'+messages.close+'">×</a></p>';
-		}
+		};
 
 		// Check if browser is supported
 		if ( isBrowserOutOfDate() || ! isPropertySupported(requiredCssProperty) || isAndroidButNotChrome ) {
@@ -405,7 +404,7 @@ module.exports = function(options) {
 			insertContentHere.innerHTML = getmessage(language);
 			startStylesAndEvents();
 		}
-	}
+	};
 
 	// Load main when DOM ready.
 	var oldOnload = window.onload;
@@ -417,7 +416,7 @@ module.exports = function(options) {
 				oldOnload();
 			}
 			main();
-		}
+		};
 	}
 };
 
