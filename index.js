@@ -238,7 +238,9 @@ module.exports = function(options) {
 
 	var main = function(){
 
-		var parsedUserAgent = new UserAgentParser().getResult();
+		// Despite the docs, UA needs to be provided to constructor explicitly:
+		// https://github.com/faisalman/ua-parser-js/issues/90
+		var parsedUserAgent = new UserAgentParser(window.navigator.userAgent).getResult();
 
 		// Variable definition (before ajax)
 		var outdatedUI = document.getElementById("outdated");
