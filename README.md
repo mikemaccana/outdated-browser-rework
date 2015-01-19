@@ -54,7 +54,7 @@ Eg: __your site runs on new browsers. Whatever bundles this has to work everywhe
 
 ### In your template
 
-In <head>, before anythign else:
+In `<head>`, before any other `script` tags:
 
     <script src="/js/dist/oldbrowser.js"></script>
 
@@ -78,7 +78,7 @@ Start `outdated-browser-rework` and call it with your preferred options:
 
 ### In your gulpfile
 
-Add the following underneat your existing 'js' task:
+Add the following underneath your existing `js` task:
 
 		gulp
 			.src('./public/js/src/oldbrowser.js')
@@ -87,7 +87,7 @@ Add the following underneat your existing 'js' task:
 			}))
 			.pipe(gulp.dest('./public/js/dist'))
 
-Doing this will mean that `oldbrowser` will only include `outdated-browser-rework` and its dependency `user-agent-parser`,without anything else to get in the way.
+Doing this will mean that `dist/oldbrowser.js` will only include `outdated-browser-rework` and its dependency `user-agent-parser`,without anything else to get in the way.
 
 ## Differences from Outdated Browser 1.1.0
 
