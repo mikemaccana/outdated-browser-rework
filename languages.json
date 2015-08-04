@@ -1,234 +1,245 @@
 {
-  "br":{
-    "outOfDate":"O seu navegador est&aacute; desatualizado!",
-    "update":{
-      "web":"Atualize o seu navegador para ter uma melhor experi&ecirc;ncia e visualiza&ccedil;&atilde;o deste site. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "br": {
+    "outOfDate": "O seu navegador est&aacute; desatualizado!",
+    "update": {
+      "web": "Atualize o seu navegador para ter uma melhor experi&ecirc;ncia e visualiza&ccedil;&atilde;o deste site. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/br",
-    "callToAction":"Atualize o seu navegador agora",
-    "close":"Fechar"
+    "url": "http://outdatedbrowser.com/br",
+    "callToAction": "Atualize o seu navegador agora",
+    "close": "Fechar"
   },
-  "cn":{
-    "outOfDate":"您的浏览器已过时",
-    "update":{
-      "web":"要正常浏览本网站请升级您的浏览器。",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "cn": {
+    "outOfDate": "您的浏览器已过时",
+    "update": {
+      "web": "要正常浏览本网站请升级您的浏览器。",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/cn",
-    "callToAction":"现在升级",
-    "close":"关闭"
+    "url": "http://outdatedbrowser.com/cn",
+    "callToAction": "现在升级",
+    "close": "关闭"
   },
-  "cz":{
-    "outOfDate":"Váš prohlížeč je zastaralý!",
-    "update":{
-      "web":"Pro správné zobrazení těchto stránek aktualizujte svůj prohlížeč. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "cz": {
+    "outOfDate": "Váš prohlížeč je zastaralý!",
+    "update": {
+      "web": "Pro správné zobrazení těchto stránek aktualizujte svůj prohlížeč. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/cz",
-    "callToAction":"Aktualizovat nyní svůj prohlížeč",
-    "close":"Zavřít"
+    "url": "http://outdatedbrowser.com/cz",
+    "callToAction": "Aktualizovat nyní svůj prohlížeč",
+    "close": "Zavřít"
   },
-  "de":{
-    "outOfDate":"Ihr Browser ist veraltet!",
-    "update":{
-      "web":"Bitte aktualisieren Sie Ihren Browser, um diese Website korrekt darzustellen. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "de": {
+    "outOfDate": "Ihr Browser ist veraltet!",
+    "update": {
+      "web": "Bitte aktualisieren Sie Ihren Browser, um diese Website korrekt darzustellen. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/de",
-    "callToAction":"Den Browser jetzt aktualisieren ",
-    "close":"Schließen"
+    "url": "http://outdatedbrowser.com/de",
+    "callToAction": "Den Browser jetzt aktualisieren ",
+    "close": "Schließen"
   },
-  "ee":{
-    "outOfDate":"Sinu veebilehitseja on vananenud!",
-    "update":{
-      "web":"Palun uuenda oma veebilehitsejat, et näha lehekülge korrektselt. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "ee": {
+    "outOfDate": "Sinu veebilehitseja on vananenud!",
+    "update": {
+      "web": "Palun uuenda oma veebilehitsejat, et näha lehekülge korrektselt. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/ee",
-    "callToAction":"Uuenda oma veebilehitsejat kohe",
-    "close":"Sulge"
+    "url": "http://outdatedbrowser.com/ee",
+    "callToAction": "Uuenda oma veebilehitsejat kohe",
+    "close": "Sulge"
   },
-  "en":{
-    "outOfDate":"Your browser is out-of-date!",
-    "update":{
-      "web":"Update your browser to view this website correctly. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "en": {
+    "outOfDate": "Your browser is out-of-date!",
+    "update": {
+      "web": "Update your browser to view this website correctly. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/",
-    "callToAction":"Update my browser now",
-    "close":"Close"
+    "url": "http://outdatedbrowser.com/",
+    "callToAction": "Update my browser now",
+    "close": "Close"
   },
-  "es":{
-    "outOfDate":"¡Tu navegador está anticuado!",
-    "update":{
-      "web":"Actualiza tu navegador para ver esta página correctamente. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "es": {
+    "outOfDate": "¡Tu navegador está anticuado!",
+    "update": {
+      "web": "Actualiza tu navegador para ver esta página correctamente. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/es",
-    "callToAction":"Actualizar mi navegador ahora",
-    "close":"Cerrar"
+    "url": "http://outdatedbrowser.com/es",
+    "callToAction": "Actualizar mi navegador ahora",
+    "close": "Cerrar"
   },
-  "fa":{
-    "rightToLeft":true,
-    "outOfDate":"مرورگر شما منسوخ شده است!",
-    "update":{
-      "web":"جهت مشاهده صحیح این وبسایت، مرورگرتان را بروز رسانی نمایید. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "fa": {
+    "rightToLeft": true,
+    "outOfDate": "مرورگر شما منسوخ شده است!",
+    "update": {
+      "web": "جهت مشاهده صحیح این وبسایت، مرورگرتان را بروز رسانی نمایید. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/",
-    "callToAction":"همین حالا مرورگرم را بروز کن",
-    "close":"Close"
+    "url": "http://outdatedbrowser.com/",
+    "callToAction": "همین حالا مرورگرم را بروز کن",
+    "close": "Close"
   },
-  "fi":{
-    "outOfDate":"Selaimesi on vanhentunut!",
-    "update":{
-      "web":"Lataa ajantasainen selain n&auml;hd&auml;ksesi t&auml;m&auml;n sivun oikein. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "fi": {
+    "outOfDate": "Selaimesi on vanhentunut!",
+    "update": {
+      "web": "Lataa ajantasainen selain n&auml;hd&auml;ksesi t&auml;m&auml;n sivun oikein. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/",
-    "callToAction":"P&auml;ivit&auml; selaimeni nyt ",
-    "close":"Sulje"
+    "url": "http://outdatedbrowser.com/",
+    "callToAction": "P&auml;ivit&auml; selaimeni nyt ",
+    "close": "Sulje"
   },
-  "fr":{
-    "outOfDate":"Votre navigateur est désuet!",
-    "update":{
-      "web":"Mettez à jour votre navigateur pour afficher correctement ce site Web. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "fr": {
+    "outOfDate": "Votre navigateur est désuet!",
+    "update": {
+      "web": "Mettez à jour votre navigateur pour afficher correctement ce site Web. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/fr",
-    "callToAction":"Mettre à jour maintenant ",
-    "close":"Fermer"
+    "url": "http://outdatedbrowser.com/fr",
+    "callToAction": "Mettre à jour maintenant ",
+    "close": "Fermer"
   },
-  "hu":{
-    "outOfDate":"A böngészője elavult!",
-    "update":{
-      "web":"Firssítse vagy cserélje le a böngészőjét. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "hu": {
+    "outOfDate": "A böngészője elavult!",
+    "update": {
+      "web": "Firssítse vagy cserélje le a böngészőjét. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/hu",
-    "callToAction":"A böngészőm frissítése ",
-    "close":"Close"
+    "url": "http://outdatedbrowser.com/hu",
+    "callToAction": "A böngészőm frissítése ",
+    "close": "Close"
   },
   "id":{
-    "outOfDate":"Browser yang Anda gunakan sudah ketinggalan zaman!",
-    "update":{
-      "web":"Perbaharuilah browser Anda agar bisa menjelajahi website ini dengan nyaman. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+    "outOfDate": "Browser yang Anda gunakan sudah ketinggalan zaman!",
+    "update": {
+      "web": "Perbaharuilah browser Anda agar bisa menjelajahi website ini dengan nyaman. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/",
-    "callToAction":"Perbaharui browser sekarang ",
-    "close":"Close"
+    "url": "http://outdatedbrowser.com/",
+    "callToAction": "Perbaharui browser sekarang ",
+    "close": "Close"
   },
-  "it":{
-    "outOfDate":"Il tuo browser non &egrave; aggiornato!",
-    "update":{
-      "web":"Aggiornalo per vedere questo sito correttamente. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "it": {
+    "outOfDate": "Il tuo browser non &egrave; aggiornato!",
+    "update": {
+      "web": "Aggiornalo per vedere questo sito correttamente. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/it",
-    "callToAction":"Aggiorna ora",
-    "close":"Chiudi"
+    "url": "http://outdatedbrowser.com/it",
+    "callToAction": "Aggiorna ora",
+    "close": "Chiudi"
   },
   "lt":{
-    "outOfDate":"Jūsų naršyklės versija yra pasenusi!",
-    "update":{
-      "web":"Atnaujinkite savo naršyklę, kad galėtumėte peržiūrėti šią svetainę tinkamai. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+    "outOfDate": "Jūsų naršyklės versija yra pasenusi!",
+    "update": {
+      "web": "Atnaujinkite savo naršyklę, kad galėtumėte peržiūrėti šią svetainę tinkamai. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/",
-    "callToAction":"Atnaujinti naršyklę ",
-    "close":"Close"
+    "url": "http://outdatedbrowser.com/",
+    "callToAction": "Atnaujinti naršyklę ",
+    "close": "Close"
   },
-  "nl":{
-    "outOfDate":"Je gebruikt een oude browser!",
-    "update":{
-      "web":"Update je browser om deze website correct te bekijken. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "nl": {
+    "outOfDate": "Je gebruikt een oude browser!",
+    "update": {
+      "web": "Update je browser om deze website correct te bekijken. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/nl",
-    "callToAction":"Update mijn browser nu ",
-    "close":"Sluiten"
+    "url": "http://outdatedbrowser.com/nl",
+    "callToAction": "Update mijn browser nu ",
+    "close": "Sluiten"
   },
-  "pl":{
-    "outOfDate":"Twoja przeglądarka jest przestarzała!",
-    "update":{
-      "web":"Zaktualizuj swoją przeglądarkę, aby poprawnie wyświetlić tę stronę. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "pl": {
+    "outOfDate": "Twoja przeglądarka jest przestarzała!",
+    "update": {
+      "web": "Zaktualizuj swoją przeglądarkę, aby poprawnie wyświetlić tę stronę. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/pl",
-    "callToAction":"Zaktualizuj przeglądarkę już teraz",
-    "close":"Close"
+    "url": "http://outdatedbrowser.com/pl",
+    "callToAction": "Zaktualizuj przeglądarkę już teraz",
+    "close": "Close"
   },
-  "pt":{
-    "outOfDate":"O seu browser est&aacute; desatualizado!",
-    "update":{
-      "web":"Atualize o seu browser para ter uma melhor experi&ecirc;ncia e visualiza&ccedil;&atilde;o deste site. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "pt": {
+    "outOfDate": "O seu browser est&aacute; desatualizado!",
+    "update": {
+      "web": "Atualize o seu browser para ter uma melhor experi&ecirc;ncia e visualiza&ccedil;&atilde;o deste site. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/pt",
-    "callToAction":"Atualize o seu browser agora",
-    "close":"Fechar"
+    "url": "http://outdatedbrowser.com/pt",
+    "callToAction": "Atualize o seu browser agora",
+    "close": "Fechar"
   },
-  "ro":{
-    "outOfDate":"Browserul este învechit!",
-    "update":{
-      "web":"Actualizați browserul pentru a vizualiza corect acest site. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "ro": {
+    "outOfDate": "Browserul este învechit!",
+    "update": {
+      "web": "Actualizați browserul pentru a vizualiza corect acest site. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/",
-    "callToAction":"Actualizați browserul acum!",
-    "close":"Close"
+    "url": "http://outdatedbrowser.com/",
+    "callToAction": "Actualizați browserul acum!",
+    "close": "Close"
   },
-  "ru":{
-    "outOfDate":"Ваш браузер устарел!",
-    "update":{
-      "web":"Обновите ваш браузер для правильного отображения этого сайта. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "ru": {
+    "outOfDate": "Ваш браузер устарел!",
+    "update": {
+      "web": "Обновите ваш браузер для правильного отображения этого сайта. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/ru",
-    "callToAction":"Обновить мой браузер ",
-    "close":"Close"
+    "url": "http://outdatedbrowser.com/ru",
+    "callToAction": "Обновить мой браузер ",
+    "close": "Закрыть"
   },
-  "si":{
-    "outOfDate":"Vaš brskalnik je zastarel!",
-    "update":{
-      "web":"Za pravilen prikaz spletne strani posodobite vaš brskalnik. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "si": {
+    "outOfDate": "Vaš brskalnik je zastarel!",
+    "update": {
+      "web": "Za pravilen prikaz spletne strani posodobite vaš brskalnik. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/si",
-    "callToAction":"Posodobi brskalnik ",
-    "close":"Zapri"
+    "url": "http://outdatedbrowser.com/si",
+    "callToAction": "Posodobi brskalnik ",
+    "close": "Zapri"
   },
-  "ua":{
-    "outOfDate":"Ваш браузер застарів!",
-    "update":{
-      "web":"Оновіть ваш браузер для правильного відображення цього сайта. ",
-      "googlePlay":"Please install Chrome from Google Play",
-      "appStore":"Please update iOS from the Settings App"
+  "sv": {
+    "outOfDate": "Din webbläsare stödjs ej längre!",
+    "update": {
+      "web": "Uppdatera din webbläsare för att webbplatsen ska visas korrekt. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
     },
-    "url":"http://outdatedbrowser.com/ua",
-    "callToAction":"Оновити мій браузер ",
-    "close":"Close"
+    "url": "http://outdatedbrowser.com/",
+    "callToAction": "Uppdatera min webbläsare nu",
+    "close": "Stäng"
+  },
+  "ua": {
+    "outOfDate": "Ваш браузер застарів!",
+    "update": {
+      "web": "Оновіть ваш браузер для правильного відображення цього сайта. ",
+      "googlePlay": "Please install Chrome from Google Play",
+      "appStore": "Please update iOS from the Settings App"
+    },
+    "url": "http://outdatedbrowser.com/ua",
+    "callToAction": "Оновити мій браузер ",
+    "close": "Закрити"
   }
 }

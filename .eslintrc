@@ -1,0 +1,221 @@
+{
+  "ecmaFeatures": {
+    "arrowFunctions": false,                                              // Enable arrow functions.
+    "binaryLiterals": false,                                              // Enable binary literals.
+    "blockBindings": false,                                               // Enable let and const (aka block bindings).
+    "classes": false,                                                     // Enable classes.
+    "defaultParams": false,                                               // Enable default function parameters.
+    "destructuring": false,                                               // Enable destructuring.
+    "forOf": false,                                                       // Enable for-of loops.
+    "generators": false,                                                  // Enable generators.
+    "modules": false,                                                     // Enable modules and global strict mode.
+    "objectLiteralComputedProperties": false,                             // Enable computed object literal property names.
+    "objectLiteralDuplicateProperties": false,                            // Enable duplicate object literal properties in strict mode.
+    "objectLiteralShorthandMethods": false,                               // Enable object literal shorthand methods.
+    "objectLiteralShorthandProperties": false,                            // Enable object literal shorthand properties.
+    "octalLiterals": false,                                               // Enable octal literals.
+    "regexUFlag": false,                                                  // Enable the regular expression u flag.
+    "regexYFlag": false,                                                  // Enable the regular expression y flag.
+    "restParams": false,                                                  // Enable the rest parameters.
+    "spread": false,                                                      // Enable the spread operator.
+    "superInFunctions": false,                                            // Enable super references inside of functions.
+    "templateStrings": false,                                             // Enable template strings.
+    "unicodePointEscapes": false,                                         // Enable code point escapes.
+    "globalReturn": false,                                                // Allow return statements in the global scope.
+    "jsx": false,                                                         // Enable JSX.
+    "experimentalObjectRestSpread": false                                 // Enable support for the experimental object rest/spread properties.
+  },
+  "env": {
+    "browser": true,                                                      // Browser global variables.
+    "node": true                                                          // Node.js global variables and Node.js-specific rules.
+  },
+  "rules": {
+
+    /* Possible Errors */
+    "comma-dangle": [1, "never"],                                         // Trailing commas in object literals.
+    "no-cond-assign": [1, "except-parens"],                               // Assignment operators in conditional statements.
+    "no-console": 0,                                                      // Unwanted console references.
+    "no-constant-condition": 1,                                           // Comparing a literal expression in a condition.
+    "no-control-regex": 1,                                                // Control characters are special, invisible characters in the ASCII range 0-31.
+    "no-debugger": 1,                                                     // This rule is aimed at eliminating debugger references from your JavaScript.
+    "no-dupe-args": 1,                                                    // In strict mode you will receive a SyntaxError if a function takes multiple arguments with the same name.
+    "no-dupe-keys": 1,                                                    // Creating objects with duplicate keys in objects.
+    "no-duplicate-case": 0,                                               // A switch statements with duplicate case labels.
+    "no-empty-character-class": 1,                                        // Empty character classes in regular expressions.
+    "no-empty": 1,                                                        // Empty statements.
+    "no-ex-assign": 1,                                                    // When an error is caught using a catch block, it's possible to accidentally (or purposely) overwrite the reference to the error.
+    "no-extra-boolean-cast": 1,                                           // Disallow Extra Boolean Casts.
+    "no-extra-parens": 0,                                                 // This rule restricts the use of parentheses to only where they are necessary.
+    "no-extra-semi": 1,                                                   // Disallow Extra Semicolons.
+    "no-func-assign": 1,                                                  // Disallow Function Assignment.
+    "no-inner-declarations": [1, "functions"],                            // Declarations in Program or Function Body.
+    "no-invalid-regexp": 1,                                               // Disallow Invalid Regular Expressions.
+    "no-irregular-whitespace": 1,                                         // No irregular whitespace.
+    "no-negated-in-lhs": 1,                                               // Disallow negated left operand of in operator.
+    "no-obj-calls": 1,                                                    // Disallow Global Object Function Calls.
+    "no-regex-spaces": 1,                                                 // Disallow Spaces in Regular Expressions.
+    "no-sparse-arrays": 1,                                                // Disallow Sparse Arrays.
+    "no-unreachable": 1,                                                  // Disallow Unreachable Code.
+    "use-isnan": 1,                                                       // Require isNaN().
+    "valid-jsdoc": 1,                                                     // Validates JSDoc comments are syntactically correct.
+    "valid-typeof": 1,                                                    // Ensures that the results of typeof are compared against a valid string.
+    "no-unexpected-multiline": 1,                                         // Avoid unexpected multiline expressions.
+
+    /* Best Practices */
+    "accessor-pairs": 0,                                                  // Enforces getter/setter pairs in objects.
+    "block-scoped-var": 1,                                                // Treat var as Block Scoped.
+    "complexity": 0,                                                      // Limit Cyclomatic Complexity.
+    "consistent-return": 1,                                               // Require Consistent Returns.
+    "curly": [1, "all"],                                                  // Require Following Curly Brace Conventions.
+    "default-case": 0,                                                    // Require Default Case in Switch Statements.
+    "dot-notation": [1, {                                                 // Require Dot Notation.
+      "allowKeywords": true,
+      "allowPattern": ""
+    }],
+    "dot-location": [1, "property"],                                      // Enforce newline before and after dot.
+    "eqeqeq": 1,                                                          // Require === and !==.
+    "guard-for-in": 0,                                                    // Require Guarding for-in.
+    "no-alert": 1,                                                        // Disallow Use of Alert.
+    "no-caller": 1,                                                       // Disallow Use of caller/callee.
+    "no-div-regex": 1,                                                    // Disallow Regexs That Look Like Division.
+    "no-else-return": 1,                                                  // Disallow return in else.
+    "no-empty-label": 1,                                                  // No empty labels.
+    "no-eq-null": 0,                                                      // Disallow Null Comparisons.
+    "no-eval": 1,                                                         // Disallow eval().
+    "no-extend-native": 1,                                                // Disallow Extending of Native Objects.
+    "no-extra-bind": 1,                                                   // Disallow unnecessary function binding.
+    "no-fallthrough": 0,                                                  // Disallow Case Statement Fallthrough.
+    "no-floating-decimal": 1,                                             // Disallow Floating Decimals.
+    "no-implicit-coercion": [1, {                                         // Disallow the type conversion with shorter notations.
+      "boolean": true,
+      "number": true,
+      "string": true
+    }],
+    "no-implied-eval": 1,                                                 // Disallow Implied eval().
+    "no-invalid-this": 1,                                                 // Disallow this keywords outside of classes or class-like objects.
+    "no-iterator": 1,                                                     // Disallow Iterator.
+    "no-labels": 1,                                                       // Disallow Labeled Statements.
+    "no-lone-blocks": 1,                                                  // Disallow Unnecessary Nested Blocks.
+    "no-loop-func": 1,                                                    // Disallow Functions in Loops.
+    "no-multi-spaces": 1,                                                 // Disallow multiple spaces.
+    "no-multi-str": 1,                                                    // Disallow Multiline Strings.
+    "no-native-reassign": 1,                                              // Disallow Reassignment of Native Objects.
+    "no-new-func": 1,                                                     // Disallow Function Constructor.
+    "no-new-wrappers": 1,                                                 // Disallow Primitive Wrapper Instances.
+    "no-new": 1,                                                          // Disallow Primitive Wrapper Instances.
+    "no-octal-escape": 1,                                                 // Disallow Octal Escapes.
+    "no-octal": 1,                                                        // Disallow Octal Literals.
+    "no-param-reassign": 0,                                               // Disallow Reassignment of Function Parameters.
+    "no-process-env": 0,                                                  // Disallow process.env.
+    "no-proto": 1,                                                        // Disallow Use of proto.
+    "no-redeclare": 1,                                                    // Disallow Redeclaring Variables.
+    "no-return-assign": 1,                                                // Disallow Assignment in return Statement.
+    "no-script-url": 1,                                                   // Disallow Script URLs.
+    "no-self-compare": 1,                                                 // Disallow Self Compare.
+    "no-sequences": 1,                                                    // Disallow Use of Comma Operator.
+    "no-throw-literal": 1,                                                // Restrict what can be thrown as an exception.
+    "no-unused-expressions": 0,                                           // Disallow Unused Expressions.
+    "no-useless-call": 1,                                                 // Disallow unnecessary .call() and .apply().
+    "no-void": 0,                                                         // Disallow use of void operator.
+    "no-warning-comments": [1, {                                          // Disallow Warning Comments.
+      "terms": ["todo", "tofix"],
+      "location": "start"
+    }],
+    "no-with": 1,                                                         // No with Statements.
+    "radix": 1,                                                           // Require Radix Parameter.
+    "vars-on-top": 0,                                                     // Require Variable Declarations to be at the Top.
+    "wrap-iife": [1, "inside"],                                           // Require IIFEs to be Wrapped.
+    "yoda": [1, "never"],                                                 // Require or disallow Yoda Conditions.
+
+    /* Strict Mode */
+    "strict": 0,                                                          // A Use Strict Directive at the beginning of a script or function body.
+
+    /* Variables */
+    "init-declarations": 0,
+    "no-catch-shadow": 0,                                                 // Disallow Shadowing of Variables Inside of catch.
+    "no-delete-var": 1,                                                   // Disallow Variables Deletion.
+    "no-label-var": 1,                                                    // Disallow Labels That Are Variables Names.
+    "no-shadow-restricted-names": 1,                                      // Disallow Shadowing of Restricted Names.
+    "no-shadow": 1,                                                       // Disallow Shadowing.
+    "no-undef-init": 1,                                                   // Disallow Initializing to undefined.
+    "no-undef": 1,                                                        // Disallow Undeclared Variables.
+    "no-undefined": 1,                                                    // Disallow Use of undefined Variable.
+    "no-unused-vars": 0,                                                  // Variables that are declared and not used anywhere in the code.
+    "no-use-before-define": 1,                                            // Disallow Early Use.
+
+    /* Node.js */
+    "callback-return": [1, ["callback", "cb", "next"]],                   // Enforce Return After Callback.
+    "handle-callback-err": 1,                                             // Ensures Callback Error Handling.
+    "no-mixed-requires": 1,                                               // Disallow Mixed Requires.
+    "no-new-require": 1,                                                  // Disallow new require.
+    "no-path-concat": 1,                                                  // Disallow string concatenation when using _dirname and _filename.
+    "no-process-exit": 1,                                                 // Disallow process.exit().
+    "no-restricted-modules": [1, ""],                                     // Disallow Node modules - add any unwanted Node.js core modules.
+    "no-sync": 0,                                                         // Disallow Synchronous Methods.
+
+    /* Stylistic Issues */
+    "array-bracket-spacing": [1, "never"],                                // Disallow or enforce spaces inside of brackets.
+    "brace-style": [1, "stroustrup", { "allowSingleLine": true }],        // Require Brace Style.
+    "camelcase": [1, { "properties": "always" }],                         // Require Camelcase.
+    "comma-spacing": [1, { "before": false, "after": true }],             // Enforces spacing around commas.
+    "comma-style": [1, "last"],                                           // Comma style.
+    "computed-property-spacing": [1, "never"],                            // Disallow or enforce spaces inside of computed properties.
+    "consistent-this": 0,                                                 // Require Consistent This.
+    "eol-last": 1,                                                        // Require file to end with single newline.
+    "func-names": 0,                                                      // Require Function Expressions to have a Name.
+    "func-style": 0,                                                      // Enforce Function Style.
+    "id-length": 0,                                                       // This option enforces minimum and maximum identifier lengths.
+    "indent": [1, 2],                                                     // Validate Indentation.
+    "key-spacing": [1, { "beforeColon": false, "afterColon": true }],     // Enforce Property Spacing.
+    "lines-around-comment": [1, {                                         // Enforce empty lines around comments.
+      "beforeBlockComment": true,
+      "beforeLineComment": false
+    }],
+    "linebreak-style": 0,                                                 // Disallow mixing CRLF and LF linebreaks.
+    "max-nested-callbacks": [0, 3],                                       // Set Maximum Depth of Nested Callbacks.
+    "new-cap": 1,                                                         // Require Constructors to Use Initial Caps.
+    "new-parens": 1,                                                      // Require Parens for Constructors.
+    "newline-after-var": 0,                                               // Allow/disallow an empty newline after var statement.
+    "no-array-constructor": 1,                                            // Disallow creation of dense arrays using the Array constructor.
+    "no-continue": 1,                                                     // Disallow continue.
+    "no-inline-comments": 0,                                              // Disallows comments after code. Comments must come on their own lines.
+    "no-lonely-if": 1,                                                    // Disallow if as the Only Statement in an else Block.
+    "no-mixed-spaces-and-tabs": 1,                                        // Disallow mixed spaces and tabs for indentation.
+    "no-multiple-empty-lines": [1, { "max": 1 }],                         // Disallows multiple blank lines.
+    "no-nested-ternary": 0,                                               // Disallow Nested Ternaries.
+    "no-new-object": 1,                                                   // Disallow new Object.
+    "no-spaced-func": 1,                                                  // Disallow Spaces in Function Calls.
+    "no-ternary": 0,                                                      // Disallow Ternary Operators.
+    "no-trailing-spaces": 1,                                              // Disallow trailing spaces at the end of lines.
+    "no-underscore-dangle": 0,                                            // Disallow Dangling Underscores in Identifiers.
+    "no-unneeded-ternary": 1,                                             // Disallow boolean literals in conditional expressions.
+    "object-curly-spacing": [1, "always"],                                // Disallow or enforce spaces inside of curly braces in objects.
+    "one-var": [1, "never"],                                              // Require or Disallow One Variable Declaration per Scope.
+    "operator-assignment": [1, "never"],                                  // Operator Assignment Shorthand.
+    "operator-linebreak": [1, "after"],                                   // Operator Linebreak
+    "padded-blocks": [0, "never"],                                        // Enforce padding within blocks.
+    "quote-props": [0, "as-needed"],                                      // Quoting Style for Property Names.
+    "quotes": [1, "single"],                                              // Enforce Quote Style.
+    "id-match": 0,                                                        // Require identifiers to match the provided regular expression
+    "semi-spacing": [1, { "before": false, "after": true }],              // Enforce spacing before and after semicolons.
+    "semi": [1, "always"],                                                // Enforce Semicolons.
+    "sort-vars": 0,                                                       // Variable Sorting.
+    "space-after-keywords": 0,                                            // Require or disallow spaces following keywords.
+    "space-before-blocks": [1, "always"],                                 // Require Or Disallow Space Before Blocks.
+    "space-before-function-paren": [1, "always"],                         // Require or disallow spaces before function parenthesis.
+    "space-in-parens": [1, "never"],                                      // Disallow or enforce spaces inside of parentheses.
+    "space-infix-ops": 1,                                                 // Require Spaces Around Infix Operators.
+    "space-return-throw-case": 1,                                         // Require spaces following return, throw, and case.
+    "space-unary-ops": 0,                                                 // Require or disallow spaces before/after unary operators.
+    "spaced-comment": 0,                                                  // Requires or disallows a whitespace (space or tab) beginning a comment.
+    "wrap-regex": 1,                                                      // Require Regex Literals to be Wrapped.
+
+    /* Legacy */
+    "max-depth": [0, 3],                                                  // Limit Maximum Depth.
+    "max-len": [1, 151, 2],                                               // Limit Maximum Length of Line.
+    "max-params": 0,                                                      // Limit Maximum Number of Parameters.
+    "max-statements": 0,                                                  // Limit Maximum Number of Statements.
+    "no-bitwise": 1,                                                      // Disallow Bitwise Operators.
+    "no-plusplus": 0,                                                     // Disallow ++ and --.
+  }
+}
