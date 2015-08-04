@@ -20,7 +20,7 @@ If you like, specify options, eg:
 			'IE': 10,
 			'Safari': 7,
 			'Mobile Safari': 7,
-			'Firefox':	32
+			'Firefox': 32
 		}
 	});
 
@@ -46,9 +46,13 @@ This module does not need jQuery.
 
 	@import "vendor/outdated-browser-rework.scss";
 
+### HTML
+
+	<div id="outdated"></div>
+
 ## Integration Tips
 
-While we normally concatenate and combine files using `npm` and `brownserify`, it's best to invoke this particular package by itself, since other scripts may expect things like `console` and `function.bind()` to exist can won't work on old browsers.
+While we normally concatenate and combine files using `npm` and `browserify`, it's best to invoke this particular package by itself, since other scripts may expect things like `console` and `function.bind()` to exist can won't work on old browsers.
 
 Eg: __your site runs on new browsers. Whatever bundles this has to work everywhere__. So read the following:
 
