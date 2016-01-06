@@ -1,4 +1,4 @@
-var UserAgentParser = require('user-agent-parser');
+var UserAgentParser = require('ua-parser-js');
 var languageMessages = require('./languages.json');
 
 module.exports = function (options) {
