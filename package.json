@@ -1,10 +1,10 @@
 {
 	"name": "outdated-browser-rework",
 	"description": "Detects outdated browsers and asks users to upgrade to a new version. Handles mobile devices!",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "index.js",
 	"dependencies": {
-		"user-agent-parser": "^0.6.0"
+		"ua-parser-js": "^0.7.0"
 	},
 	"author": "Mike MacCana <mike.maccana@gmail.com>",
 	"repository": {
