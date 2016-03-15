@@ -1,21 +1,34 @@
 {
-	"name": "outdated-browser-rework",
-	"description": "Detects outdated browsers and asks users to upgrade to a new version. Handles mobile devices!",
-	"version": "1.0.1",
-	"main": "index.js",
-	"dependencies": {
-		"ua-parser-js": "^0.7.0"
-	},
-	"author": "Mike MacCana <mike.maccana@gmail.com>",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/mikemaccana/outdated-browser-rework.git"
-	},
-	"keywords": [
-		"outdated",
-		"outdated-browser",
-		"upgrade",
-		"old",
-		"browser"
-	]
+  "name": "outdated-browser-rework",
+  "description": "Detects outdated browsers and asks users to upgrade to a new version. Handles mobile devices!",
+  "version": "1.1.0",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist && mkdir dist",
+    "build:css": "node-sass outdated-browser-rework.scss dist/styles.css",
+    "build:js": "webpack index.js dist/index.js",
+    "build-min:js": "webpack -p index.js dist/index.min.js",
+    "prepublish": "npm run clean && npm run build:js && npm run build-min:js && npm run build:css"
+  },
+  "dependencies": {
+    "ua-parser-js": "^0.7.0"
+  },
+  "author": "Mike MacCana <mike.maccana@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikemaccana/outdated-browser-rework.git"
+  },
+  "keywords": [
+    "outdated",
+    "outdated-browser",
+    "upgrade",
+    "old",
+    "browser"
+  ],
+  "devDependencies": {
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.4.2",
+    "rimraf": "^2.5.2",
+    "webpack": "^1.12.14"
+  }
 }
