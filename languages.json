@@ -32,6 +32,17 @@
     "callToAction": "Aktualizovat nyní svůj prohlížeč",
     "close": "Zavřít"
   },
+   "da": {
+    "outOfDate": "Din browser er forældet!",
+    "update": {
+      "web": "Opdatér din browser for at få vist denne hjemmeside korrekt. ",
+      "googlePlay": "Installér venligst Chrome fra Google Play",
+      "appStore": "Opdatér venligst iOS"
+    },
+    "url": "http://outdatedbrowser.com/da",
+    "callToAction": "Opdatér din browser nu",
+    "close": "Luk"
+  },
   "de": {
     "outOfDate": "Ihr Browser ist veraltet!",
     "update": {
