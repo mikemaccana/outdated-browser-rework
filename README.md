@@ -52,9 +52,7 @@ This module does not need jQuery.
 
 ## Integration Tips
 
-While we normally concatenate and combine files using `npm` and `browserify`, it's best to invoke this particular package by itself, since other scripts may expect things like `console` and `function.bind()` to exist can won't work on old browsers.
-
-Eg: __your site runs on new browsers. Whatever bundles this has to work everywhere__. So read the following:
+We normally concatenate and combine different JS files using `npm` and `browserify`, but it's best to bundle this particular package by itself, since other scripts may expect things like `console` and `function.bind()` to exist and won't work on old browsers - if you bundle this with other software, and an old browser tried to use the bundle, the JS will probably fail before outdated-browser has a chance to do any work.
 
 ### In your template
 
