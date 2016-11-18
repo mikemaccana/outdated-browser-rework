@@ -114,7 +114,7 @@
     "outOfDate": "Votre navigateur n'est plus compatible !",
     "update": {
       "web": "Mettez à jour votre navigateur pour afficher correctement ce site Web. ",
-      "googlePlay": "Merci d'installer Chrome depuis le Google Play",
+      "googlePlay": "Merci d'installer Chrome depuis le Google Play Store",
       "appStore": "Merci de mettre à jour iOS depuis l'application Réglages"
     },
     "url": "http://outdatedbrowser.com/fr",
