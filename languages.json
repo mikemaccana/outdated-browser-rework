@@ -111,11 +111,11 @@
     "close": "Sulje"
   },
   "fr": {
-    "outOfDate": "Votre navigateur est désuet!",
+    "outOfDate": "Votre navigateur n'est plus compatible !",
     "update": {
       "web": "Mettez à jour votre navigateur pour afficher correctement ce site Web. ",
-      "googlePlay": "Please install Chrome from Google Play",
-      "appStore": "Please update iOS from the Settings App"
+      "googlePlay": "Merci d'installer Chrome depuis le Google Play",
+      "appStore": "Merci de mettre à jour iOS depuis l'application Réglages"
     },
     "url": "http://outdatedbrowser.com/fr",
     "callToAction": "Mettre à jour maintenant ",
