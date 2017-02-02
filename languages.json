@@ -103,10 +103,10 @@
     "outOfDate": "Selaimesi on vanhentunut!",
     "update": {
       "web": "Lataa ajantasainen selain n&auml;hd&auml;ksesi t&auml;m&auml;n sivun oikein. ",
-      "googlePlay": "Please install Chrome from Google Play",
-      "appStore": "Please update iOS from the Settings App"
+      "googlePlay": "Asenna uusin Chrome Google Play -kaupasta",
+      "appStore": "Päivitä iOS puhelimesi asetuksista"
     },
-    "url": "http://outdatedbrowser.com/",
+    "url": "http://outdatedbrowser.com/fi",
     "callToAction": "P&auml;ivit&auml; selaimeni nyt ",
     "close": "Sulje"
   },
