@@ -84,7 +84,7 @@ module.exports = function (options) {
         return true;
       }
       var div = document.createElement('div');
-      var vendorPrefixes = ['khtml ms o moz webkit'];
+      var vendorPrefixes = ['khtml', 'ms', 'o', 'moz', 'webkit'];
       var count = vendorPrefixes.length;
 
       if (div.style[prop]) {
@@ -103,9 +103,9 @@ module.exports = function (options) {
       return false;
     };
 
-    var makeFadeInFunction = function (x) {
+    var makeFadeInFunction = function(opacityValue) {
       return function () {
-        fadeIn(x);
+        fadeIn(opacityValue);
       };
     };
 
@@ -171,8 +171,8 @@ module.exports = function (options) {
       if (done && outdatedUI.style.opacity !== '1') {
         done = false;
 
-        for (var i = 1; i <= 100; i++) {
-          setTimeout(makeFadeInFunction(i), i * 8);
+        for (var opacity = 1; opacity <= 100; opacity++) {
+          setTimeout(makeFadeInFunction(opacity), opacity * 8);
         }
       }
 
