@@ -16,7 +16,7 @@ module.exports = function (options) {
 
     var browserLocale = window.navigator.language || window.navigator.userLanguage; // Everyone else, IE
 
-		// Set default options
+    // Set default options
     var browserSupport = options.browserSupport || {
       'Chrome': 37,
       'IE': 10,
@@ -32,7 +32,7 @@ module.exports = function (options) {
 
     var updateSource = 'web'; // Other possible values are 'googlePlay' or 'appStore'. Determines where we tell users to go for upgrades.
 
-		// Chrome mobile is still Chrome (unlike Safari which is 'Mobile Safari')
+    // Chrome mobile is still Chrome (unlike Safari which is 'Mobile Safari')
     var isAndroid = parsedUserAgent.os.name === 'Android';
     if (isAndroid) {
       updateSource = 'googlePlay';
@@ -69,7 +69,9 @@ module.exports = function (options) {
       var browserMajorVersion = parsedUserAgent.browser.major;
       var isOutOfDate = false;
       if (browserSupport[browserName]) {
-        if (browserMajorVersion < browserSupport[browserName]) {
+        if ( ! browserSupport[browserName] ) {
+          isOutOfDate = true
+        } else if (browserMajorVersion < browserSupport[browserName]) {
           isOutOfDate = true;
         }
       }
@@ -82,7 +84,7 @@ module.exports = function (options) {
         return true;
       }
       var div = document.createElement('div');
-      var vendorPrefixes = 'Khtml Ms O Moz Webkit'.split(' ');
+      var vendorPrefixes = ['khtml ms o moz webkit'];
       var count = vendorPrefixes.length;
 
       if (div.style[prop]) {
@@ -107,7 +109,7 @@ module.exports = function (options) {
       };
     };
 
-		// Style element explicitly - TODO: investigate and delete if not needed
+    // Style element explicitly - TODO: investigate and delete if not needed
     var startStylesAndEvents = function () {
       var buttonClose = document.getElementById('buttonCloseUpdateBrowser');
       var buttonUpdate = document.getElementById('buttonUpdateBrowser');
@@ -162,10 +164,10 @@ module.exports = function (options) {
         '<p class="last"><a href="#" id="buttonCloseUpdateBrowser" title="' + messages.close + '">×</a></p>';
     };
 
-		// Check if browser is supported
+    // Check if browser is supported
     if (isBrowserOutOfDate() || ! isPropertySupported(requiredCssProperty) || isAndroidButNotChrome) {
 
-			// This is an outdated browser
+      // This is an outdated browser
       if (done && outdatedUI.style.opacity !== '1') {
         done = false;
 
@@ -180,7 +182,7 @@ module.exports = function (options) {
     }
   };
 
-	// Load main when DOM ready.
+  // Load main when DOM ready.
   var oldOnload = window.onload;
   if (typeof window.onload !== 'function') {
     window.onload = main;

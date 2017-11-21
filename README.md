@@ -4,6 +4,19 @@ Detects outdated browsers and advises users to upgrade to a new version. Handles
 
 This is a fork of [Burocratik](http://www.burocratik.com)'s excellent Outdated Browser, adding a number of new features.
 
+One of the challenges with making this type of module is that the display can't use any current tech - so yes, this is hard. This module is tested all the way back to IE6.
+
+This module does not need jQuery.
+
+#### Version 2 notes 
+
+ - New translations
+ - New `false` option to disable browser support.
+ - IE default to `false`. You can still specify `6` to `11` if, for some reason, you still support IE in 2017.
+ - SCSS file is named `index.scss` for use with `sass-npm`
+ - CSS file is included
+ - Update `ua-parser-js` to fix parsing some more esoteric UAs 
+
 ## Usage
 
 ### JS
@@ -16,11 +29,14 @@ If you like, specify options, eg:
 
 	outdatedBrowserRework({
 		browserSupport: {
-			'Chrome': 37, // Includes Chrome for mobile devices
-			'IE': 10,
-			'Safari': 7,
-			'Mobile Safari': 7,
-			'Firefox': 32
+			'Chrome': 57, // Includes Chrome for mobile devices
+			'Edge': 38,
+			'Safari': 10,
+			'Mobile Safari': 10,
+			'Firefox': 58,
+			// You could specify a version here if you still support IE in 2017.
+			// You could also instead seriously considerer what you're doing with your time and budget
+			'IE': false, 
 		}
 	});
 
@@ -32,9 +48,7 @@ Browsers that are __older__ than the versions supplied will see a message, depen
  - on iOS devices, users will be asked to visit the Settings app and upgrade their OS.
  - On Android devices, users will be directed to Chrome in Google Play.
 
-It's tested all the way from IE11 to IE6.
 
-This module does not need jQuery.
 
 #### Options
 
