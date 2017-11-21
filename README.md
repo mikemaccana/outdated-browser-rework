@@ -13,13 +13,14 @@ This module does not need jQuery.
  - New translations
  - New `false` option to disable browser support.
  - IE default to `false`. You can still specify `6` to `11` if, for some reason, you still support IE in 2017.
- - SCSS file is named `index.scss` for use with `sass-npm`
  - CSS file is included
  - Update `ua-parser-js` to fix parsing some more esoteric UAs 
 
 ## Usage
 
 ### JS
+
+Make a standalone `<script>` tag with the following contents: 
 
 	var outdatedBrowserRework = require("outdated-browser-rework");
 
@@ -47,8 +48,6 @@ Browsers that are __older__ than the versions supplied will see a message, depen
  - On desktop browsers, users will be directed to [outdatedbrowser.com](http://outdatedbrowser.com)
  - on iOS devices, users will be asked to visit the Settings app and upgrade their OS.
  - On Android devices, users will be directed to Chrome in Google Play.
-
-
 
 #### Options
 
