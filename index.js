@@ -1,6 +1,23 @@
 var UserAgentParser = require('ua-parser-js');
 var languageMessages = require('./languages.json');
 
+var DEFAULTS = {
+  'Chrome': 57, // Includes Chrome for mobile devices
+  'Edge': 39,
+  'Safari': 10,
+  'Mobile Safari': 10,
+  'Firefox': 50,
+  'IE': false
+};
+
+var EDGEHTML_VS_EDGE_VERSIONS = {
+  12: 0.1,
+  13: 21,
+  14: 31,
+  15: 39,
+  16: 41
+};
+
 module.exports = function (options) {
 
   var main = function () {
@@ -17,13 +34,7 @@ module.exports = function (options) {
     var browserLocale = window.navigator.language || window.navigator.userLanguage; // Everyone else, IE
 
     // Set default options
-    var browserSupport = options.browserSupport || {
-      'Chrome': 37,
-      'IE': 10,
-      'Safari': 7,
-      'Mobile Safari': 7,
-      'Firefox': 32
-    };
+    var browserSupport = options.browserSupport || DEFAULTS;
     // CSS property to check for. You may also like 'borderSpacing', 'boxShadow', 'transform', 'borderImage';
     var	requiredCssProperty = options.requiredCssProperty || false;
     var	backgroundColor = options.backgroundColor || '#f25648'; // Salmon
@@ -67,6 +78,9 @@ module.exports = function (options) {
     var isBrowserOutOfDate = function () {
       var browserName = parsedUserAgent.browser.name;
       var browserMajorVersion = parsedUserAgent.browser.major;
+      if ( browserName === 'Edge' ) {
+        browserMajorVersion = EDGEHTML_VS_EDGE_VERSIONS[browserMajorVersion]
+      }
       var isOutOfDate = false;
       if (browserSupport[browserName]) {
         if ( ! browserSupport[browserName] ) {

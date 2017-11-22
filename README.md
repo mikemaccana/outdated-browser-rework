@@ -6,6 +6,7 @@ This is a fork of [Burocratik](http://www.burocratik.com)'s Outdated Browser, ad
 
  - Explicit browser version support
  - Mobile browser support
+ - Edge support
  - Substantial size reduction
  - More translations
  - Unminified code
@@ -41,16 +42,18 @@ If you like, specify options, eg:
 	outdatedBrowserRework({
 		browserSupport: {
 			'Chrome': 57, // Includes Chrome for mobile devices
-			'Edge': 38,
+			'Edge': 39,
 			'Safari': 10,
 			'Mobile Safari': 10,
-			'Firefox': 58,
+			'Firefox': 50,
 			// You could specify a version here if you still support IE in 2017.
-			// You could also instead seriously considerer what you're doing with your time and budget
-			'IE': false, 
+			// You could also instead seriously consider what you're doing with your time and budget
+			'IE': false
 		},
 		requireChromeOnAndroid: true
 	})
+
+The particular versions used in this example are the defaults, by the way!
 
 See below for more options.
 
@@ -82,6 +85,8 @@ Add the required HTML at the end of your document:
 
 	<div id="outdated"></div>
 
+Yes, [IDs suck](http://2ality.com/2012/08/ids-are-global.html) but old browsers don't support gettting elements by class name.
+
 ## For gulp users
 
 Add the following underneath your existing `js` task:
@@ -96,7 +101,8 @@ Add the following underneath your existing `js` task:
 Doing this will mean that `dist/oldbrowser.js` will only include `outdated-browser-rework` and its dependency `user-agent-parser`, without anything else to get in the way.
 
 ## Outdated Browser Rework Version 2 notes 
-
+ 
+ - Edge versions now specified directly (rather than via EdgeHTML)
  - Better documentation
  - New translations
  - New `false` option to disable browser support.
