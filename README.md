@@ -19,7 +19,7 @@ This module does not need jQuery.
 
 ## Demo
 
-Outdated Browser Rework was created by, for, an is used in production at, [EV HTTPS provider CertSimple](https://certsimple.com). You can see it working there.
+Outdated Browser Rework was created by, for, and is used in production at, [EV HTTPS provider CertSimple](https://certsimple.com). You can see it working there.
 
 ## Usage
 
