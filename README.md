@@ -72,8 +72,8 @@ Browsers that are __older__ than the versions supplied, or who use a browser whe
  - __browserSupport__:Object - A matrix of browsers and their major versions - see above for demo. Anything less will be unsupported. `false` means all versions are unsupported.
  - __requiredCssProperty__:String - A CSS property that must be supported.
  - __requireChromeOnAndroid__:Boolean - Ask Android users to install Chrome.
- - __requireChromeOnAndroid__:Function - A function that will be called if the browser outdated (after the message is shown). Remember that the browser may not support ES2016+, so keep your javascript simple.
- - __injectHTML__:Boolean - [Default: False] If `true`, will automatically create the `<div id='outdated'>` as needed and insert it as the first child of the `<body>` tag
+ - __browserOutdatedCallback__:Function - A function that will be called if the browser outdated (after the message is shown). Remember that the browser may not support ES2016+, so keep your javascript simple.
+ - __injectHTML__:Boolean - If `true`, will automatically create the `<div id='outdated'>` as needed and insert it as the first child of the `<body>` tag. `false` by default.
 
 
 ## SCSS
