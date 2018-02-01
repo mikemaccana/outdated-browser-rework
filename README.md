@@ -72,6 +72,9 @@ Browsers that are __older__ than the versions supplied, or who use a browser whe
  - __browserSupport__:Object - A matrix of browsers and their major versions - see above for demo. Anything less will be unsupported. `false` means all versions are unsupported.
  - __requiredCssProperty__:String - A CSS property that must be supported.
  - __requireChromeOnAndroid__:Boolean - Ask Android users to install Chrome.
+ - __requireChromeOnAndroid__:Function - A function that will be called if the browser outdated (after the message is shown). Remember that the browser may not support ES2016+, so keep your javascript simple.
+ - __injectHTML__:Boolean - [Default: False] If `true`, will automatically create the `<div id='outdated'>` as needed and insert it as the first child of the `<body>` tag
+
 
 ## SCSS
 
@@ -104,15 +107,15 @@ Add the following underneath your existing `js` task:
 
 Doing this will mean that `dist/oldbrowser.js` will only include `outdated-browser-rework` and its dependency `user-agent-parser`, without anything else to get in the way.
 
-## Outdated Browser Rework Version 2 notes 
- 
+## Outdated Browser Rework Version 2 notes
+
  - Edge versions now specified directly (rather than via EdgeHTML)
  - Better documentation
  - New translations
  - New `false` option to disable browser support.
- - IE default to `false` - ie, display a message telling users to get a new browser on any version of IE. You can still specify `6` to `11` if, for some reason, you still support IE in 2017. 
+ - IE default to `false` - ie, display a message telling users to get a new browser on any version of IE. You can still specify `6` to `11` if, for some reason, you still support IE in 2017.
  - CSS file is included
- - Update `ua-parser-js` to fix parsing some more esoteric UAs 
+ - Update `ua-parser-js` to fix parsing some more esoteric UAs
 
 ## Differences from Bürocratik's Outdated Browser 1.1.0
 
