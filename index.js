@@ -75,13 +75,18 @@ module.exports = function (options) {
       }
     };
 
+    var browserOutdatedCallback = null;
+    if (options.browserOutdatedCallback) {
+      browserOutdatedCallback = options.browserOutdatedCallback;
+    }
+
     var isBrowserOutOfDate = function () {
       var browserName = parsedUserAgent.browser.name;
       var browserMajorVersion = parsedUserAgent.browser.major;
       if ( browserName === 'Edge' ) {
         browserMajorVersion = EDGEHTML_VS_EDGE_VERSIONS[browserMajorVersion]
       }
-      var isOutOfDate = false;    
+      var isOutOfDate = false;
       if ( ! browserSupport[browserName] ) {
         isOutOfDate = true
       } else if (browserMajorVersion < browserSupport[browserName]) {
@@ -180,6 +185,13 @@ module.exports = function (options) {
     if (isBrowserOutOfDate() || ! isPropertySupported(requiredCssProperty) || isAndroidButNotChrome) {
 
       // This is an outdated browser
+      if(options.injectHTML){
+        var outdatedDiv = document.createElement("div");
+        outdatedDiv.id = 'outdated';
+        document.body.insertBefore(outdatedDiv, document.body.firstChild);
+        outdatedUI = document.getElementById('outdated');
+      }
+
       if (done && outdatedUI.style.opacity !== '1') {
         done = false;
 
@@ -191,6 +203,10 @@ module.exports = function (options) {
       var insertContentHere = document.getElementById('outdated');
       insertContentHere.innerHTML = getmessage(language);
       startStylesAndEvents();
+
+      if(browserOutdatedCallback != null) {
+        browserOutdatedCallback();
+      }
     }
   };
 
