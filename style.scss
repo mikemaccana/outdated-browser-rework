@@ -51,7 +51,8 @@ $secondaryColor: white;
 		position: absolute;
 		right: 25px;
 		top: 10px;
-		width: 0px;
+		width: auto;
+		display: inline-table;
 	}
 
 	.last[dir=rtl] {
