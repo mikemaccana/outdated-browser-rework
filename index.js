@@ -169,9 +169,9 @@ module.exports = function (options) {
       var messages = languageMessages[lang] || languageMessages.en;
 
       var updateMessages = {
-        'web': '<p>' + messages.update.web + '<a id="buttonUpdateBrowser" href="' + messages.url + '">' + messages.callToAction + '</a></p>',
+        'web': '<p>' + messages.update.web + '<a id="buttonUpdateBrowser" rel="nofollow" href="' + messages.url + '">' + messages.callToAction + '</a></p>',
         'googlePlay': '<p>' + messages.update.googlePlay +
-        '<a id="buttonUpdateBrowser" href="https://play.google.com/store/apps/details?id=com.android.chrome">' + messages.callToAction + '</a></p>',
+        '<a id="buttonUpdateBrowser" rel="nofollow" href="https://play.google.com/store/apps/details?id=com.android.chrome">' + messages.callToAction + '</a></p>',
         'appStore': '<p>' + messages.update[updateSource] + '</p>'
       };
 

@@ -38,7 +38,8 @@
     position: absolute;
     right: 25px;
     top: 10px;
-    width: 0px; }
+    width: auto;
+    display: inline-table; }
   #outdated .last[dir=rtl] {
     left: 25px !important;
     right: auto !important; }

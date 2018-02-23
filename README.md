@@ -23,8 +23,6 @@ Outdated Browser Rework was created by, for, and is used in production at, [EV H
 
 ## Usage
 
-In modern times we normally concatenate and combine different JS files using `npm` and `browserify`, but it's best to bundle this particular package by itself, since other scripts may expect things like `console` and `function.bind()` to exist and won't work on old browsers - if you bundle this with other software, and an old browser tried to use the bundle, the JS will probably fail before outdated-browser has a chance to do any work.
-
 ### JS
 
 ### In your template
@@ -94,7 +92,11 @@ Add the required HTML at the end of your document:
 
 Yes, [IDs suck](http://2ality.com/2012/08/ids-are-global.html) but old browsers don't support gettting elements by class name.
 
-## For gulp users
+## Bunding the JavaScript
+
+In modern times we normally concatenate and combine different JS modules using [browserify](http://browserify.org/) or [webpack](https://webpack.js.org/): **it's best to bundle outdated-browser-rework by itself**. Since other scripts may expect things like `console` and `function.bind()` to exist, they won't work on old browsers - if you bundle this with other software, the JS will probably fail before outdated-browser has a chance to do any work.
+
+### For gulp users
 
 Add the following underneath your existing `js` task:
 
@@ -107,7 +109,11 @@ Add the following underneath your existing `js` task:
 
 Doing this will mean that `dist/oldbrowser.js` will only include `outdated-browser-rework` and its dependency `user-agent-parser`, without anything else to get in the way.
 
-## Outdated Browser Rework Version 2 notes
+### For Webpack users
+
+Someone using Webpack please provide Webpack instructions!
+
+## Outdated Browser Rework Version 2 notes 
 
  - Edge versions now specified directly (rather than via EdgeHTML)
  - Better documentation
