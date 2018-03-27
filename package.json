@@ -18,5 +18,13 @@
     "old",
     "browser",
     "internet-explorer"
-  ]
+  ],
+  "devDependencies": {
+    "browserify": "^16.1.1",
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  }
 }
