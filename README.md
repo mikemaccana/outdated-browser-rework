@@ -9,6 +9,7 @@ This is a fork of [Burocratik](http://www.burocratik.com)'s Outdated Browser, ad
  - Edge support
  - Substantial size reduction
  - More translations
+ - Custom upgrade messages
  - Unminified code
 
 And more (see below for the full list).
@@ -29,31 +30,41 @@ Outdated Browser Rework was created by, for, and is used in production at, [EV H
 
 In `<head>`, before any other `script` tags:
 
-	<script src="/js/dist/oldbrowser.js"></script>
+    <script src="/js/dist/oldbrowser.js"></script>
 
 ### In `oldbrowser.js`
 
 Start `outdated-browser-rework` and call it with your preferred options:
 
-	var outdatedBrowserRework = require("outdated-browser-rework");
+    var outdatedBrowserRework = require("outdated-browser-rework");
 
-	outdatedBrowserRework();
+    outdatedBrowserRework();
 
 If you like, specify options, eg:
 
-	outdatedBrowserRework({
-		browserSupport: {
-			'Chrome': 57, // Includes Chrome for mobile devices
-			'Edge': 39,
-			'Safari': 10,
-			'Mobile Safari': 10,
-			'Firefox': 50,
-			// You could specify a version here if you still support IE in 2017.
-			// You could also instead seriously consider what you're doing with your time and budget
-			'IE': false
-		},
-		requireChromeOnAndroid: true
-	})
+    outdatedBrowserRework({
+        browserSupport: {
+            'Chrome': 57, // Includes Chrome for mobile devices
+            'Edge': 39,
+            'Safari': 10,
+            'Mobile Safari': 10,
+            'Firefox': 50,
+            // You could specify a version here if you still support IE in 2017.
+            // You could also instead seriously consider what you're doing with your time and budget
+            'IE': false
+        },
+        requireChromeOnAndroid: true,
+        // Specify messaages if you want to custommize them
+        // See languages.json for more details
+        messages: {
+            en: {
+                outOfDate: "Please upgrade your browser",
+                update: {
+                    web: "There may be parts of the application that will not operate at the optimal level until the browser is updated"
+                }
+            }
+        }
+    })
 
 The particular versions used in this example are the defaults, by the way!
 
@@ -69,23 +80,24 @@ Browsers that are __older__ than the versions supplied, or who use a browser whe
 
  - __browserSupport__:Object - A matrix of browsers and their major versions - see above for demo. Anything less will be unsupported. `false` means all versions are unsupported.
  - __requiredCssProperty__:String - A CSS property that must be supported.
+ - __messages__:Object - Customize upgrade messages for your purposes
  - __requireChromeOnAndroid__:Boolean - Ask Android users to install Chrome.
 
 ## SCSS
 
 If you're using [sass-npm](https://www.npmjs.com/package/sass-npm) you can just import the npm module, and it will load `index.scss`:
 
-	@import "outdated-browser-rework.scss";
+    @import "outdated-browser-rework.scss";
 
 Otherwise compile the sass and put it somewhere. Then load that via a `link` tag inside `<head>`:
 
-	<link rel="stylesheet" href="/css/outdated-browser.css">
+    <link rel="stylesheet" href="/css/outdated-browser.css">
 
 ## HTML
 
 Add the required HTML at the end of your document:
 
-	<div id="outdated"></div>
+    <div id="outdated"></div>
 
 Yes, [IDs suck](http://2ality.com/2012/08/ids-are-global.html) but old browsers don't support gettting elements by class name.
 
@@ -97,12 +109,12 @@ In modern times we normally concatenate and combine different JS modules using [
 
 Add the following underneath your existing `js` task:
 
-		gulp
-			.src('./public/js/src/oldbrowser.js')
-			.pipe(browserify({
-				debug : ! gulp.env.production
-			}))
-			.pipe(gulp.dest('./public/js/dist'))
+    gulp
+	    .src('./public/js/src/oldbrowser.js')
+	    .pipe(browserify({
+	        debug : ! gulp.env.production
+	    }))
+	    .pipe(gulp.dest('./public/js/dist'))
 
 Doing this will mean that `dist/oldbrowser.js` will only include `outdated-browser-rework` and its dependency `user-agent-parser`, without anything else to get in the way.
 
@@ -115,6 +127,7 @@ Someone using Webpack please provide Webpack instructions!
  - Edge versions now specified directly (rather than via EdgeHTML)
  - Better documentation
  - New translations
+ - Custom upgrade messages
  - New `false` option to disable browser support.
  - IE default to `false` - ie, display a message telling users to get a new browser on any version of IE. You can still specify `6` to `11` if, for some reason, you still support IE in 2017. 
  - CSS file is included
@@ -128,6 +141,7 @@ Someone using Webpack please provide Webpack instructions!
  - Be an NPM module
  - Use SASS (specifically SCSS)
  - No AJAX, languages are only 8K and removing the AJAX library has made the code substantially shorter.
+ - Added support for custom upgrade messages
 
 And some code fixes:
 

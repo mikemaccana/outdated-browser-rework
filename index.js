@@ -1,5 +1,6 @@
 var UserAgentParser = require('ua-parser-js');
 var languageMessages = require('./languages.json');
+var deepExtend = require('deep-extend');
 
 var DEFAULTS = {
   'Chrome': 57, // Includes Chrome for mobile devices
@@ -161,7 +162,9 @@ module.exports = function (options) {
     };
 
     var getmessage = function (lang) {
-      var messages = languageMessages[lang] || languageMessages.en;
+      var defaultMessages = languageMessages[lang] || languageMessages.en;
+      var customMessages = options.messages && options.messages[lang];
+      var messages = deepExtend({}, defaultMessages, customMessages);
 
       var updateMessages = {
         'web': '<p>' + messages.update.web + '<a id="buttonUpdateBrowser" rel="nofollow" href="' + messages.url + '">' + messages.callToAction + '</a></p>',
