@@ -112,7 +112,7 @@ Add the following underneath your existing `js` task:
     gulp
 	    .src('./public/js/src/oldbrowser.js')
 	    .pipe(browserify({
-	       debug : ! gulp.env.production
+	        debug : ! gulp.env.production
 	    }))
 	    .pipe(gulp.dest('./public/js/dist'))
 
