@@ -162,7 +162,7 @@ module.exports = function (options) {
     };
 
     var getmessage = function (lang) {
-      var messages = deepExtend({}, languageMessages[lang] || languageMessages.en, options.messages[lang]);
+      var messages = deepExtend({}, languageMessages[lang] || languageMessages.en, options.messages && options.messages[lang]);
 
       var updateMessages = {
         'web': '<p>' + messages.update.web + '<a id="buttonUpdateBrowser" rel="nofollow" href="' + messages.url + '">' + messages.callToAction + '</a></p>',
