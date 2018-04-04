@@ -82,6 +82,9 @@ Browsers that are __older__ than the versions supplied, or who use a browser whe
  - __requiredCssProperty__:String - A CSS property that must be supported.
  - __messages__:Object - Customize upgrade messages for your purposes
  - __requireChromeOnAndroid__:Boolean - Ask Android users to install Chrome.
+ - __browserOutdatedCallback__:Function - A function that will be called if the browser outdated (after the message is shown). Remember that the browser may not support ES2016+, so keep your javascript simple.
+ - __injectHTML__:Boolean - If `true`, will automatically create the `<div id='outdated'>` as needed and insert it as the first child of the `<body>` tag. `false` by default.
+
 
 ## SCSS
 
@@ -123,15 +126,15 @@ Doing this will mean that `dist/oldbrowser.js` will only include `outdated-brows
 Someone using Webpack please provide Webpack instructions!
 
 ## Outdated Browser Rework Version 2 notes 
- 
+
  - Edge versions now specified directly (rather than via EdgeHTML)
  - Better documentation
  - New translations
  - Custom upgrade messages
  - New `false` option to disable browser support.
- - IE default to `false` - ie, display a message telling users to get a new browser on any version of IE. You can still specify `6` to `11` if, for some reason, you still support IE in 2017. 
+ - IE default to `false` - ie, display a message telling users to get a new browser on any version of IE. You can still specify `6` to `11` if, for some reason, you still support IE in 2017.
  - CSS file is included
- - Update `ua-parser-js` to fix parsing some more esoteric UAs 
+ - Update `ua-parser-js` to fix parsing some more esoteric UAs
 
 ## Differences from Bürocratik's Outdated Browser 1.1.0
 
