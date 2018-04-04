@@ -9,6 +9,7 @@ This is a fork of [Burocratik](http://www.burocratik.com)'s Outdated Browser, ad
  - Edge support
  - Substantial size reduction
  - More translations
+ - Custom upgrade messages
  - Unminified code
 
 And more (see below for the full list).
@@ -52,7 +53,17 @@ If you like, specify options, eg:
 			// You could also instead seriously consider what you're doing with your time and budget
 			'IE': false
 		},
-		requireChromeOnAndroid: true
+		requireChromeOnAndroid: true,
+        // Specify messaages if you want to custommize them
+        // See languages.json for more details
+        messages: {
+            en: {
+                outOfDate: "Please upgrade your browser",
+                update: {
+                    web: "There may be parts of the application that will not operate at the optimal level until the browser is updated"
+                }
+            }
+        }
 	})
 
 The particular versions used in this example are the defaults, by the way!
@@ -69,6 +80,7 @@ Browsers that are __older__ than the versions supplied, or who use a browser whe
 
  - __browserSupport__:Object - A matrix of browsers and their major versions - see above for demo. Anything less will be unsupported. `false` means all versions are unsupported.
  - __requiredCssProperty__:String - A CSS property that must be supported.
+ - __messages__:Object - Customize upgrade messages for your purposes
  - __requireChromeOnAndroid__:Boolean - Ask Android users to install Chrome.
 
 ## SCSS
@@ -115,6 +127,7 @@ Someone using Webpack please provide Webpack instructions!
  - Edge versions now specified directly (rather than via EdgeHTML)
  - Better documentation
  - New translations
+ - Custom upgrade messages
  - New `false` option to disable browser support.
  - IE default to `false` - ie, display a message telling users to get a new browser on any version of IE. You can still specify `6` to `11` if, for some reason, you still support IE in 2017. 
  - CSS file is included
@@ -128,6 +141,7 @@ Someone using Webpack please provide Webpack instructions!
  - Be an NPM module
  - Use SASS (specifically SCSS)
  - No AJAX, languages are only 8K and removing the AJAX library has made the code substantially shorter.
+ - Added support for custom upgrade messages
 
 And some code fixes:
 
