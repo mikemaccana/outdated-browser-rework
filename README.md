@@ -54,14 +54,12 @@ If you like, specify options, eg:
             'IE': false
         },
         requireChromeOnAndroid: true,
-        unknownBrowserOk: true,  // default is false, unknown browser always be out date.set true let unknown browser self is not out date (but can detect by requiredCssProperty later).
-        // Specify messaages if you want to custommize them
-        // See languages.json for more details
+        isUnknownBrowserOK: true, 
         messages: {
             en: {
                 outOfDate: "Please upgrade your browser",
                 update: {
-                    web: "There may be parts of the application that will not operate at the optimal level until the browser is updated"
+                    web: "Some features won't be optimal level until your browser is updated"
                 }
             }
         }
@@ -81,8 +79,9 @@ Browsers that are __older__ than the versions supplied, or who use a browser whe
 
  - __browserSupport__:Object - A matrix of browsers and their major versions - see above for demo. Anything less will be unsupported. `false` means all versions are unsupported.
  - __requiredCssProperty__:String - A CSS property that must be supported.
- - __messages__:Object - Customize upgrade messages for your purposes
+ - __messages__:Object - Customize upgrade messages for your purposes.  See `languages.json` for more details.
  - __requireChromeOnAndroid__:Boolean - Ask Android users to install Chrome.
+ - __isUnknownBrowserOK__: Boolean. Whether unknown browsers are considered to be out of date or not. The default is `false`, ie. unknown browsers are considered to be out of date. Consider setting `true` and using `requiredCssProperty` to catch missing features.
 
 ## SCSS
 
@@ -125,6 +124,8 @@ Someone using Webpack please provide Webpack instructions!
 
 ## Outdated Browser Rework Version 2 notes 
  
+ - Add `isUnknownBrowserOK` option to determine how to handle unknown browsers.
+ - Add `messages` to override the default out of date messages.
  - Edge versions now specified directly (rather than via EdgeHTML)
  - Better documentation
  - New translations
