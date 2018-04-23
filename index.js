@@ -16,7 +16,8 @@ var EDGEHTML_VS_EDGE_VERSIONS = {
 	13: 21,
 	14: 31,
 	15: 39,
-	16: 41
+	16: 41,
+	17: 42
 };
 
 module.exports = function (options) {

@@ -126,12 +126,12 @@ Someone using Webpack please provide Webpack instructions!
  
  - Add `isUnknownBrowserOK` option to determine how to handle unknown browsers.
  - Add `messages` to override the default out of date messages.
- - Edge versions now specified directly (rather than via EdgeHTML)
+ - Edge versions are now specified directly (rather than using EdgeHTML versions). For example, you now specify Edge `16` rather than `41`.
  - Better documentation
  - New translations
  - Custom upgrade messages
  - New `false` option to disable browser support.
- - IE default to `false` - ie, display a message telling users to get a new browser on any version of IE. You can still specify `6` to `11` if, for some reason, you still support IE in 2017. 
+ - IE now defaults to `false` - ie, display a message telling users to get a new browser on any version of IE. You can still specify `6` to `11` if, for some reason, you still support IE in 2018. Tip: you should not support IE in 2018. 
  - CSS file is included
  - Update `ua-parser-js` to fix parsing some more esoteric UAs 
 
