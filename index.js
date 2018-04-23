@@ -84,7 +84,8 @@ module.exports = function (options) {
       }
       var isOutOfDate = false;    
       if ( ! browserSupport[browserName] ) {
-        isOutOfDate = true
+      	// support for unknown browser can be config to not out date,
+				if(!!options.unknownBrowserOk) isOutOfDate = true;
       } else if (browserMajorVersion < browserSupport[browserName]) {
         isOutOfDate = true;
       }
