@@ -54,6 +54,7 @@ If you like, specify options, eg:
             'IE': false
         },
         requireChromeOnAndroid: true,
+        unknownBrowserOk: true,  // default is false, unknown browser always be out date.set true let unknown browser self is not out date (but can detect by requiredCssProperty later).
         // Specify messaages if you want to custommize them
         // See languages.json for more details
         messages: {
