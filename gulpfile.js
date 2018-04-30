@@ -13,17 +13,17 @@ var uglifyOptions = {
 };
 
 gulp.task('default', function () {
-  // set up the browserify instance on a task basis
-  var b = browserify({
-    entries: './index.js',
-    debug: true
-  });
+	// set up the browserify instance on a task basis
+	var b = browserify({
+		entries: './index.js',
+		debug: true
+	});
 
-  return b.bundle()
-    .pipe(source('oldbrowser.js'))
-    .pipe(buffer())
-        // Add transformation tasks to the pipeline here.
-        .pipe(uglify(uglifyOptions))
-        .on('error', gutil.log)
-    .pipe(gulp.dest('./dist/'));
+	return b.bundle()
+		.pipe(source('oldbrowser.js'))
+		.pipe(buffer())
+		// Add transformation tasks to the pipeline here.
+		.pipe(uglify(uglifyOptions))
+		.on('error', gutil.log)
+		.pipe(gulp.dest('./dist/'));
 });
