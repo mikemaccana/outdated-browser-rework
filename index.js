@@ -7,6 +7,7 @@ var DEFAULTS = {
 	'Edge': 39,
 	'Safari': 10,
 	'Mobile Safari': 10,
+	'Opera': 50,
 	'Firefox': 50,
 	'IE': false
 };
