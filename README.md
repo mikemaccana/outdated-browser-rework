@@ -22,7 +22,7 @@ This module does not need jQuery.
 
 Outdated Browser Rework was created by, for, and is used in production at, [EV HTTPS provider CertSimple](https://certsimple.com). You can see it working there.
 
-## Usage
+## Usage (with browserify)
 
 ### JS
 
@@ -65,7 +65,7 @@ If you like, specify options, eg:
             }
         }
     })
-
+    
 The particular versions used in this example are the defaults, by the way!
 
 See below for more options.
@@ -75,6 +75,17 @@ Browsers that are __older__ than the versions supplied, or who use a browser whe
  - On desktop browsers, users will be directed to [outdatedbrowser.com](http://outdatedbrowser.com)
  - on iOS devices, users will be asked to visit the Settings app and upgrade their OS.
  - On Android devices, users will be directed to Chrome in Google Play.
+
+## Usage (without browserify)
+### In your template
+In `<head>`, before any other `script` tags:
+
+    <script src="/js/dist/outdated-browser-rework.min.js"></script>
+    <script>
+        outdatedBrowserRework();
+    </script>
+    
+See above for the default options.
 
 #### Options
 
