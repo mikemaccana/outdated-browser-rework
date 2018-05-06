@@ -54,14 +54,19 @@ If you like, specify options, eg:
             // You could also instead seriously consider what you're doing with your time and budget
             'IE': false
         },
-        requireChromeOnAndroid: true,
-        isUnknownBrowserOK: true, 
+        requireChromeOnAndroid: false,
+        isUnknownBrowserOK: false, 
         messages: {
             en: {
-                outOfDate: "Please upgrade your browser",
+                outOfDate: "Your browser is out-of-date!",
                 update: {
-                    web: "Some features won't be optimal level until your browser is updated"
-                }
+                    web: "Update your browser to view this website correctly. ",
+                    googlePlay: "Please install Chrome from Google Play",
+                    appStore: "Please update iOS from the Settings App"
+                },
+                url: "http://outdatedbrowser.com/",
+                callToAction: "Update my browser now",
+                close: "Close"
             }
         }
     })
@@ -78,10 +83,11 @@ Browsers that are __older__ than the versions supplied, or who use a browser whe
 
 #### Options
 
- - __browserSupport__:Object - A matrix of browsers and their major versions - see above for demo. Anything less will be unsupported. `false` means all versions are unsupported.
- - __requiredCssProperty__:String - A CSS property that must be supported.
- - __messages__:Object - Customize upgrade messages for your purposes.  See `languages.json` for more details.
- - __requireChromeOnAndroid__:Boolean - Ask Android users to install Chrome.
+ - __browserSupport__: Object - A matrix of browsers and their major versions - see above for demo. Anything less will be unsupported. `false` means all versions are unsupported.
+ - __requiredCssProperty__: String - A CSS property that must be supported.
+ - __messages__: Object - Customize upgrade messages for your purposes.  See the above default options for an example.
+ - __language__: String - A language string to be used for the messages in the notification. Default is `en`. See `languages.json` for supported languages. Can be used instead of __messages__ if preferred.
+ - __requireChromeOnAndroid__: Boolean - Ask Android users to install Chrome. Default is `false`.
  - __isUnknownBrowserOK__: Boolean. Whether unknown browsers are considered to be out of date or not. The default is `false`, ie. unknown browsers are considered to be out of date. Consider setting `true` and using `requiredCssProperty` to catch missing features.
 
 ## SCSS
