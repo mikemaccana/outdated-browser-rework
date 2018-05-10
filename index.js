@@ -104,7 +104,7 @@ module.exports = function (options) {
 			var vendorPrefixes = ['khtml', 'ms', 'o', 'moz', 'webkit'];
 			var count = vendorPrefixes.length;
 
-			if ( div.style[property] ) {
+			if ( div.style.hasOwnProperty(property) ) {
 				return true;
 			}
 
@@ -113,7 +113,8 @@ module.exports = function (options) {
 			});
 
 			while (count--) {
-				if ( div.style[vendorPrefixes[count] + property] ) {
+				var prefixedProperty = vendorPrefixes[count] + property
+				if ( div.style.hasOwnProperty(prefixedProperty) ) {
 					return true;
 				}
 			}

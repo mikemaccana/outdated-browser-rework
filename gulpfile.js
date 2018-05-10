@@ -1,12 +1,11 @@
 'use strict';
 
-var browserify = require('browserify');
-var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var gutil = require('gulp-util');
-
+var startBrowserify = require('browserify'),
+	gulp = require('gulp'),
+	uglify = require('gulp-uglify'),
+	source = require('vinyl-source-stream'),
+	buffer = require('vinyl-buffer'),
+	gulpUtil = require('gulp-util');
 
 var uglifyOptions = {
 	ie8: true,
@@ -14,16 +13,16 @@ var uglifyOptions = {
 
 gulp.task('default', function () {
 	// set up the browserify instance on a task basis
-	var b = browserify({
+	var browserify = browserify({
 		entries: './index.js',
 		debug: true
 	});
 
-	return b.bundle()
+	return browserify.bundle()
 		.pipe(source('oldbrowser.js'))
 		.pipe(buffer())
 		// Add transformation tasks to the pipeline here.
 		.pipe(uglify(uglifyOptions))
-		.on('error', gutil.log)
+		.on('error', gulpUtil.log)
 		.pipe(gulp.dest('./dist/'));
 });
