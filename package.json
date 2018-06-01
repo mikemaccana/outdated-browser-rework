@@ -26,9 +26,10 @@
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "uglify-js": "^3.3.28"
   },
   "scripts": {
-    "build": "browserify index.js -d -s outdatedBrowserRework > dist/outdated-browser-rework.min.js"
+    "build": "browserify index.js -d -s outdatedBrowserRework | uglifyjs > dist/outdated-browser-rework.min.js"
   }
 }
