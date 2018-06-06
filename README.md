@@ -11,6 +11,7 @@ This is a fork of [Burocratik](http://www.burocratik.com)'s Outdated Browser, ad
  - More translations
  - Custom upgrade messages
  - Unminified code
+ - Return status value
 
 And more (see below for the full list).
 
@@ -153,6 +154,7 @@ Someone using Webpack please provide Webpack instructions!
  - IE now defaults to `false` - ie, display a message telling users to get a new browser on any version of IE. You can still specify `6` to `11` if, for some reason, you still support IE in 2018. Tip: you should not support IE in 2018. 
  - CSS file is included
  - Update `ua-parser-js` to fix parsing some more esoteric UAs 
+ - Return a promise to check if the browser is considered outdated or not
 
 ## Differences from Bürocratik's Outdated Browser 1.1.0
 

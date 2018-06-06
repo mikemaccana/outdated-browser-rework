@@ -1,6 +1,7 @@
 var UserAgentParser = require('ua-parser-js');
 var languageMessages = require('./languages.json');
 var deepExtend = require('deep-extend');
+var Promise = require('lie');
 
 var DEFAULTS = {
 	'Chrome': 57, // Includes Chrome for mobile devices
@@ -209,20 +210,28 @@ module.exports = function (options) {
 			var insertContentHere = document.getElementById('outdated');
 			insertContentHere.innerHTML = getmessage(language);
 			startStylesAndEvents();
+
+			return false;
+		} else {
+			return true;
 		}
 	};
 
-	// Load main when DOM ready.
-	var oldOnload = window.onload;
-	if (typeof window.onload !== 'function') {
-		window.onload = main;
-	}
-	else {
-		window.onload = function () {
-			if ( oldOnload ) {
-				oldOnload();
-			}
-			main();
-		};
-	}
+	return new Promise(function(resolve) {
+		// Load main when DOM ready.
+		var oldOnload = window.onload;
+		if (typeof window.onload !== 'function') {
+			window.onload = function() {
+				resolve(main());
+			};
+		}
+		else {
+			window.onload = function () {
+				if ( oldOnload ) {
+					oldOnload();
+				}
+				resolve(main());
+			};
+		}
+	});
 };
