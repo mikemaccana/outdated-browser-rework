@@ -1,7 +1,7 @@
 {
   "name": "outdated-browser-rework",
   "description": "Detects outdated browsers and asks users to upgrade to a new version. Handles mobile devices!",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "main": "index.js",
   "dependencies": {
     "deep-extend": "^0.5.0",
@@ -25,9 +25,9 @@
     "gulp": "^3.9.1",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
+    "uglify-js": "^3.3.28",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0",
-    "uglify-js": "^3.3.28"
+    "vinyl-source-stream": "^2.0.0"
   },
   "scripts": {
     "build": "browserify index.js -d -s outdatedBrowserRework | uglifyjs > dist/outdated-browser-rework.min.js"
