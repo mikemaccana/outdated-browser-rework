@@ -22,7 +22,7 @@ This module does not need jQuery.
 
 Outdated Browser Rework was created by, for, and is used in production at, [EV HTTPS provider CertSimple](https://certsimple.com). You can see it working there.
 
-If you want to force your browser to be unsupported, you can also check out [a demo where all browsers are unsupported]() 
+If you want to force your browser to be unsupported, you can also check out [a demo where all browsers are unsupported](https://mikemaccana.github.io/outdated-browser-rework/). 
 
 ## Usage (with browserify)
 
