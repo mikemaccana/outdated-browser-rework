@@ -181,7 +181,7 @@ module.exports = function (options) {
 			var updateMessage = updateMessages[updateSource];
 
 			return '<h6>' + messages.outOfDate + '</h6>' + updateMessage +
-				'<p class="last"><a href="#" id="buttonCloseUpdateBrowser" title="' + messages.close + '">×</a></p>';
+				'<p class="last"><a href="#" id="buttonCloseUpdateBrowser" title="' + messages.close + '">x</a></p>';
 		};
 
 		// Check if browser is supported

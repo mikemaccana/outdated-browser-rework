@@ -25,11 +25,12 @@
     "gulp": "^3.9.1",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
+    "node-sass": "^4.9.0",
     "uglify-js": "^3.3.28",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },
   "scripts": {
-    "build": "browserify index.js -d -s outdatedBrowserRework | uglifyjs > dist/outdated-browser-rework.min.js"
+    "build": "node-sass style.scss dist/style.css && browserify index.js -d -s outdatedBrowserRework | uglifyjs > dist/outdated-browser-rework.min.js"
   }
 }
