@@ -14,13 +14,15 @@ This is a fork of [Burocratik](http://www.burocratik.com)'s Outdated Browser, ad
 
 And more (see below for the full list).
 
-One of the challenges with making this type of module is that the JS and CSS **can't use any current tech** - the 'get a new browser' message must display on older browsers - so yes, this is hard. This module is tested all the way back to IE6.
+One of the challenges with making this type of module is that the JS and CSS **can't use any current tech** - the 'get a new browser' message must display on older browsers - so yes, this is hard. We can't even use the nice '×' close character (we have to use the letter 'x') since that character doesn't display on some older browsers! This module is tested all the way back to IE6.
 
 This module does not need jQuery.
 
 ## Demo
 
 Outdated Browser Rework was created by, for, and is used in production at, [EV HTTPS provider CertSimple](https://certsimple.com). You can see it working there.
+
+If you want to force your browser to be unsupported, you can also check out [a demo where all browsers are unsupported]() 
 
 ## Usage (with browserify)
 
@@ -30,47 +32,46 @@ Outdated Browser Rework was created by, for, and is used in production at, [EV H
 
 In `<head>`, before any other `script` tags:
 
-    <script src="/js/dist/oldbrowser.js"></script>
+	<script src="/js/dist/oldbrowser.js"></script>
 
 ### In `oldbrowser.js`
 
 Start `outdated-browser-rework` and call it with your preferred options:
 
-    var outdatedBrowserRework = require("outdated-browser-rework");
-
-    outdatedBrowserRework();
+	var outdatedBrowserRework = require("outdated-browser-rework");
+	outdatedBrowserRework();
 
 If you like, specify options, eg:
 
-    outdatedBrowserRework({
-        browserSupport: {
-            'Chrome': 57, // Includes Chrome for mobile devices
-            'Edge': 39,
-            'Safari': 10,
-            'Mobile Safari': 10,
-            'Firefox': 50,
-            'Opera': 50,
-            // You could specify a version here if you still support IE in 2017.
-            // You could also instead seriously consider what you're doing with your time and budget
-            'IE': false
-        },
-        requireChromeOnAndroid: false,
-        isUnknownBrowserOK: false, 
-        messages: {
-            en: {
-                outOfDate: "Your browser is out-of-date!",
-                update: {
-                    web: "Update your browser to view this website correctly. ",
-                    googlePlay: "Please install Chrome from Google Play",
-                    appStore: "Please update iOS from the Settings App"
-                },
-                url: "http://outdatedbrowser.com/",
-                callToAction: "Update my browser now",
-                close: "Close"
-            }
-        }
-    })
-    
+	outdatedBrowserRework({
+		browserSupport: {
+			'Chrome': 57, // Includes Chrome for mobile devices
+			'Edge': 39,
+			'Safari': 10,
+			'Mobile Safari': 10,
+			'Firefox': 50,
+			'Opera': 50,
+			// You could specify a version here if you still support IE in 2017.
+			// You could also instead seriously consider what you're doing with your time and budget
+			'IE': false
+		},
+		requireChromeOnAndroid: false,
+		isUnknownBrowserOK: false, 
+		messages: {
+			en: {
+				outOfDate: "Your browser is out of date!",
+				update: {
+					web: "Update your browser to view this website correctly. ",
+					googlePlay: "Please install Chrome from Google Play",
+					appStore: "Please update iOS from the Settings App"
+				},
+				url: "http://outdatedbrowser.com/",
+				callToAction: "Update my browser now",
+				close: "Close"
+			}
+		}
+	})
+		
 The particular versions used in this example are the defaults, by the way!
 
 See below for more options.
@@ -85,11 +86,11 @@ Browsers that are __older__ than the versions supplied, or who use a browser whe
 ### In your template
 In `<head>`, before any other `script` tags:
 
-    <script src="/js/dist/outdated-browser-rework.min.js"></script>
-    <script>
-        outdatedBrowserRework();
-    </script>
-    
+		<script src="/js/dist/outdated-browser-rework.min.js"></script>
+		<script>
+				outdatedBrowserRework();
+		</script>
+		
 See above for the default options.
 
 #### Options
@@ -105,17 +106,17 @@ See above for the default options.
 
 If you're using [sass-npm](https://www.npmjs.com/package/sass-npm) you can just import the npm module, and it will load `index.scss`:
 
-    @import "outdated-browser-rework.scss";
+	@import "outdated-browser-rework.scss";
 
 Otherwise compile the sass and put it somewhere. Then load that via a `link` tag inside `<head>`:
 
-    <link rel="stylesheet" href="/css/outdated-browser.css">
+	<link rel="stylesheet" href="/css/outdated-browser.css">
 
 ## HTML
 
 Add the required HTML at the end of your document:
 
-    <div id="outdated"></div>
+			<div id="outdated"></div>
 
 Yes, [IDs suck](http://2ality.com/2012/08/ids-are-global.html) but old browsers don't support gettting elements by class name.
 
@@ -127,12 +128,12 @@ In modern times we normally concatenate and combine different JS modules using [
 
 Add the following underneath your existing `js` task:
 
-    gulp
-	    .src('./public/js/src/oldbrowser.js')
-	    .pipe(browserify({
-	        debug : ! gulp.env.production
-	    }))
-	    .pipe(gulp.dest('./public/js/dist'))
+	gulp
+		.src('./public/js/src/oldbrowser.js')
+		.pipe(browserify({
+				debug : ! gulp.env.production
+		}))
+		.pipe(gulp.dest('./public/js/dist'))
 
 Doing this will mean that `dist/oldbrowser.js` will only include `outdated-browser-rework` and its dependency `user-agent-parser`, without anything else to get in the way.
 
@@ -166,8 +167,7 @@ Someone using Webpack please provide Webpack instructions!
 And some code fixes:
 
  - Pass eslint
- - Remove HTML entities. It's 2015, we have unicode now.
- - Included Vanilla JS onload option - that way you can keep using jQuery 2 and not have to revert to 1.x just to show messages to old browsers.
+ - vanilla JS (no jQuery!)
  - Simplify some variable and function names
 
 There's still some TODOs from the original code:
@@ -178,5 +178,6 @@ There's still some TODOs from the original code:
 
 ## Author
 
-This rework is made by Mike MacCana.
+This rework is made by Mike MacCana and a whole bunch of amazing open source contributors!
+
 The original Outdated Browser is made with love at [Bürocratik](http://burocratik.com)
