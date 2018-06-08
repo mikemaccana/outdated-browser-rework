@@ -21,6 +21,14 @@ var EDGEHTML_VS_EDGE_VERSIONS = {
 	17: 42
 };
 
+var updateDefaults = function(defaults, updatedValues){
+	updatedKeys = Object.keys(updatedValues)
+	for(var i=0; i < updatedKeys.length; i++){
+		defaults[updatedKeys[i]] = updatedValues[updatedKeys[0]] 
+	}
+	return defaults
+}
+
 module.exports = function (options) {
 
 	var main = function () {
@@ -37,7 +45,7 @@ module.exports = function (options) {
 		var browserLocale = window.navigator.language || window.navigator.userLanguage; // Everyone else, IE
 
 		// Set default options
-		var browserSupport = options.browserSupport || DEFAULTS;
+		var browserSupport = options.browserSupport ? updateDefaults(DEFAULTS, options.browserSupport) : DEFAULTS;
 		// CSS property to check for. You may also like 'borderSpacing', 'boxShadow', 'transform', 'borderImage';
 		var	requiredCssProperty = options.requiredCssProperty || false;
 		var	backgroundColor = options.backgroundColor || '#f25648'; // Salmon
