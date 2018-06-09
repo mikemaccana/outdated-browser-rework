@@ -79,7 +79,7 @@ module.exports = function (options) {
 		var fadeIn = function (opacityValue) {
 			changeOpacity(opacityValue);
 			if (opacityValue === 1) {
-				outdatedUI.style.display = 'block';
+				outdatedUI.style.display = 'table';
 			}
 			if (opacityValue === 100) {
 				done = true;
@@ -144,8 +144,8 @@ module.exports = function (options) {
 			outdatedUI.style.backgroundColor = backgroundColor;
 			//way too hard to put !important on IE6
 			outdatedUI.style.color = textColor;
-			outdatedUI.children[0].style.color = textColor;
-			outdatedUI.children[1].style.color = textColor;
+			outdatedUI.children[0].children[0].style.color = textColor;
+			outdatedUI.children[0].children[1].style.color = textColor;
 
 			// Update button is desktop only
 			if (buttonUpdate) {
@@ -188,8 +188,8 @@ module.exports = function (options) {
 
 			var updateMessage = updateMessages[updateSource];
 
-			return '<h6>' + messages.outOfDate + '</h6>' + updateMessage +
-				'<p class="last"><a href="#" id="buttonCloseUpdateBrowser" title="' + messages.close + '">&times;</a></p>';
+			return '<div class="vcenter"><h6>' + messages.outOfDate + '</h6>' + updateMessage +
+				'<p class="last"><a href="#" id="buttonCloseUpdateBrowser" title="' + messages.close + '">&times;</a></p></div>';
 		};
 
 		// Check if browser is supported

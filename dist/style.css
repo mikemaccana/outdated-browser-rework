@@ -12,7 +12,13 @@
   top: 0;
   width: 100%;
   z-index: 1500;
-  padding: 24px; }
+  padding: 0 24px 24px 0; }
+  #outdated.fullscreen {
+    height: 100%; }
+  #outdated .vcenter {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle; }
   #outdated h6 {
     font-size: 25px;
     line-height: 25px;
