@@ -50,6 +50,7 @@ module.exports = function (options) {
 		var	requiredCssProperty = options.requiredCssProperty || false;
 		var	backgroundColor = options.backgroundColor || '#f25648'; // Salmon
 		var	textColor = options.textColor || 'white';
+		var fullscreen = options.fullscreen || false; //Defaulting fullscreen to false.
 		var	language = options.language || browserLocale.slice(0, 2); // Language code
 
 		var updateSource = 'web'; // Other possible values are 'googlePlay' or 'appStore'. Determines where we tell users to go for upgrades.
@@ -205,6 +206,9 @@ module.exports = function (options) {
 			}
 
 			var insertContentHere = document.getElementById('outdated');
+			if(fullscreen){
+				insertContentHere.classList.add("fullscreen");
+			}
 			insertContentHere.innerHTML = getmessage(language);
 			startStylesAndEvents();
 		}
