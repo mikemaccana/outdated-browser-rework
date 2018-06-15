@@ -21,13 +21,15 @@ var EDGEHTML_VS_EDGE_VERSIONS = {
 	17: 42
 };
 
-var updateDefaults = function(defaults, updatedValues){
-	updatedKeys = Object.keys(updatedValues)
-	for(var i=0; i < updatedKeys.length; i++){
-		defaults[updatedKeys[i]] = updatedValues[updatedKeys[0]] 
+var updateDefaults = function(defaults, updatedValues) {
+	for (var key in updatedValues) {
+		if (defaults.hasOwnProperty(key)) {
+			defaults[key] = updatedValues[key];
+		}
 	}
-	return defaults
-}
+
+	return defaults;
+};
 
 module.exports = function (options) {
 
@@ -93,7 +95,7 @@ module.exports = function (options) {
 			if ( browserName === 'Edge' ) {
 				browserMajorVersion = EDGEHTML_VS_EDGE_VERSIONS[browserMajorVersion]
 			}
-			var isOutOfDate = false;    
+			var isOutOfDate = false;
 			if ( ! browserSupport[browserName] ) {
 				if ( ! options.isUnknownBrowserOK ) {
 					isOutOfDate = true;
