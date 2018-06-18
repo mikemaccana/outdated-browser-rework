@@ -9,6 +9,7 @@ var DEFAULTS = {
 	'Mobile Safari': 10,
 	'Opera': 50,
 	'Firefox': 50,
+	'Vivaldi': 1,
 	'IE': false
 };
 

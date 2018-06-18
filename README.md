@@ -51,6 +51,7 @@ If you like, specify options, eg:
 			'Mobile Safari': 10,
 			'Firefox': 50,
 			'Opera': 50,
+			'Vivaldi': 1,
 			// You could specify a version here if you still support IE in 2017.
 			// You could also instead seriously consider what you're doing with your time and budget
 			'IE': false
