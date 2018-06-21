@@ -22,6 +22,11 @@ var EDGEHTML_VS_EDGE_VERSIONS = {
 	17: 42
 };
 
+var COLORS = {
+	salmon: '#f25648',
+	white: 'white'
+}
+
 var updateDefaults = function(defaults, updatedValues) {
 	for (var key in updatedValues) {
 		if (defaults.hasOwnProperty(key)) {
