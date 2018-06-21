@@ -15,7 +15,7 @@
   padding: 0 24px 24px 0; }
   #outdated.fullscreen {
     height: 100%; }
-  #outdated .vcenter {
+  #outdated .vertical-center {
     display: table-cell;
     text-align: center;
     vertical-align: middle; }

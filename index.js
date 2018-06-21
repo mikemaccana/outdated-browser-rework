@@ -55,11 +55,11 @@ module.exports = function (options) {
 		// Set default options
 		var browserSupport = options.browserSupport ? updateDefaults(DEFAULTS, options.browserSupport) : DEFAULTS;
 		// CSS property to check for. You may also like 'borderSpacing', 'boxShadow', 'transform', 'borderImage';
-		var	requiredCssProperty = options.requiredCssProperty || false;
-		var	backgroundColor = options.backgroundColor || '#f25648'; // Salmon
-		var	textColor = options.textColor || 'white';
-		var fullscreen = options.fullscreen || false; //Defaulting fullscreen to false.
-		var	language = options.language || browserLocale.slice(0, 2); // Language code
+		var requiredCssProperty = options.requiredCssProperty || false;
+		var backgroundColor = options.backgroundColor || COLORS.salmon; 
+		var textColor = options.textColor || COLORS.white;
+		var fullscreen = options.fullscreen || false;
+		var language = options.language || browserLocale.slice(0, 2); // Language code
 
 		var updateSource = 'web'; // Other possible values are 'googlePlay' or 'appStore'. Determines where we tell users to go for upgrades.
 
@@ -197,7 +197,7 @@ module.exports = function (options) {
 
 			var updateMessage = updateMessages[updateSource];
 
-			return '<div class="vcenter"><h6>' + messages.outOfDate + '</h6>' + updateMessage +
+			return '<div class="vertical-center"><h6>' + messages.outOfDate + '</h6>' + updateMessage +
 				'<p class="last"><a href="#" id="buttonCloseUpdateBrowser" title="' + messages.close + '">&times;</a></p></div>';
 		};
 
