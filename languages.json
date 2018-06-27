@@ -25,8 +25,8 @@
     "outOfDate": "Váš prohlížeč je zastaralý!",
     "update": {
       "web": "Pro správné zobrazení těchto stránek aktualizujte svůj prohlížeč. ",
-      "googlePlay": "Please install Chrome from Google Play",
-      "appStore": "Please update iOS from the Settings App"
+      "googlePlay": "Nainstalujte si Chrome z Google Play",
+      "appStore": "Aktualizujte si systém iOS"
     },
     "url": "http://outdatedbrowser.com/cz",
     "callToAction": "Aktualizovat nyní svůj prohlížeč",
