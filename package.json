@@ -4,7 +4,6 @@
   "version": "2.5.4",
   "main": "index.js",
   "dependencies": {
-    "deep-extend": "^0.5.0",
     "ua-parser-js": "^0.7.17"
   },
   "author": "Mike MacCana <mike.maccana@gmail.com>",
