@@ -121,7 +121,7 @@ Add the required HTML at the end of your document:
 
 Yes, [IDs suck](http://2ality.com/2012/08/ids-are-global.html) but old browsers don't support gettting elements by class name.
 
-## Bunding the JavaScript
+## Bundling the JavaScript
 
 In modern times we normally concatenate and combine different JS modules using [browserify](http://browserify.org/) or [webpack](https://webpack.js.org/): **it's best to bundle outdated-browser-rework by itself**. Since other scripts may expect things like `console` and `function.bind()` to exist, they won't work on old browsers - if you bundle this with other software, the JS will probably fail before outdated-browser has a chance to do any work.
 
