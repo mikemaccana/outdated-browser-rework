@@ -119,7 +119,7 @@ module.exports = function(options) {
 			var vendorPrefixes = ["khtml", "ms", "o", "moz", "webkit"]
 			var count = vendorPrefixes.length
 
-			if (div.style.hasOwnProperty(property)) {
+			if (property in div.style) {
 				return true
 			}
 
@@ -129,7 +129,7 @@ module.exports = function(options) {
 
 			while (count--) {
 				var prefixedProperty = vendorPrefixes[count] + property
-				if (div.style.hasOwnProperty(prefixedProperty)) {
+				if (prefixedProperty in div.style) {
 					return true
 				}
 			}
