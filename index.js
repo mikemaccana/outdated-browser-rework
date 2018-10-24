@@ -119,6 +119,7 @@ module.exports = function(options) {
 			var vendorPrefixes = ["khtml", "ms", "o", "moz", "webkit"]
 			var count = vendorPrefixes.length
 
+			// Note: HTMLElement.style.hasOwnProperty seems broken in Edge
 			if (property in div.style) {
 				return true
 			}
@@ -129,6 +130,7 @@ module.exports = function(options) {
 
 			while (count--) {
 				var prefixedProperty = vendorPrefixes[count] + property
+				// See comment re: HTMLElement.style.hasOwnProperty above
 				if (prefixedProperty in div.style) {
 					return true
 				}
