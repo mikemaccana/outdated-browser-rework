@@ -1,31 +1,31 @@
 {
-  "name": "outdated-browser-rework",
-  "description": "Detects outdated browsers and asks users to upgrade to a new version. Handles mobile devices!",
-  "version": "2.5.4",
-  "main": "index.js",
-  "dependencies": {
-    "ua-parser-js": "^0.7.18"
-  },
-  "author": "Mike MacCana <mike.maccana@gmail.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mikemaccana/outdated-browser-rework.git"
-  },
-  "keywords": [
-    "outdated",
-    "outdated-browser",
-    "upgrade",
-    "old",
-    "browser",
-    "internet-explorer"
-  ],
-  "devDependencies": {
-    "browserify": "^16.2.3",
-    "node-sass": "^4.9.3",
-    "nodemon": "^1.18.4"
-  },
-  "scripts": {
-    "build": "node-sass style.scss dist/style.css && browserify index.js -d -s outdatedBrowserRework -o dist/outdated-browser-rework.js && uglifyjs dist/outdated-browser-rework.js --ie8 -c -m > dist/outdated-browser-rework.min.js",
-    "watch": "nodemon --exec 'npm run build' --ignore dist"
-  }
+	"name": "outdated-browser-rework",
+	"description": "Detects outdated browsers and asks users to upgrade to a new version. Handles mobile devices!",
+	"version": "2.6.0",
+	"main": "index.js",
+	"dependencies": {
+		"ua-parser-js": "^0.7.18"
+	},
+	"author": "Mike MacCana <mike.maccana@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mikemaccana/outdated-browser-rework.git"
+	},
+	"keywords": [
+		"outdated",
+		"outdated-browser",
+		"upgrade",
+		"old",
+		"browser",
+		"internet-explorer"
+	],
+	"devDependencies": {
+		"browserify": "^16.2.3",
+		"node-sass": "^4.9.3",
+		"nodemon": "^1.18.4"
+	},
+	"scripts": {
+		"build": "node-sass style.scss dist/style.css && browserify index.js -d -s outdatedBrowserRework -o dist/outdated-browser-rework.js && uglifyjs dist/outdated-browser-rework.js --ie8 -c -m > dist/outdated-browser-rework.min.js",
+		"watch": "nodemon --exec 'npm run build' --ignore dist"
+	}
 }
