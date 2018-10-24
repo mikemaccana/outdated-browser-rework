@@ -14,7 +14,7 @@ This is a fork of [Burocratik](http://www.burocratik.com)'s Outdated Browser, ad
 
 And more (see below for the full list).
 
-One of the challenges with making this type of module is that the JS and CSS **can't use any current tech** - the 'get a new browser' message must display on older browsers - so yes, this is hard. We can't even use the nice '×' close character (we have to use the letter 'x') since that character doesn't display on some older browsers! This module is tested all the way back to IE6.
+One of the challenges with making this type of module is that the JS and CSS **can't use any current tech** - the 'get a new browser' message must display on older browsers - so yes, this is hard. We have to use ES3, an ancient version of JavaScript. We can't even use the nice '×' close character (we have to use the letter 'x') since that character doesn't display on some older browsers! This module is tested all the way back to IE6.
 
 This module does not need jQuery.
 
