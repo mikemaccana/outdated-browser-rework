@@ -1,6 +1,6 @@
 var UserAgentParser = require('ua-parser-js');
 var languageMessages = require('./languages.json');
-var deepExtend = require('deep-extend');
+var deepExtend = require('./extend');
 
 var DEFAULTS = {
 	'Chrome': 57, // Includes Chrome for mobile devices
@@ -56,7 +56,7 @@ module.exports = function (options) {
 		var browserSupport = options.browserSupport ? updateDefaults(DEFAULTS, options.browserSupport) : DEFAULTS;
 		// CSS property to check for. You may also like 'borderSpacing', 'boxShadow', 'transform', 'borderImage';
 		var requiredCssProperty = options.requiredCssProperty || false;
-		var backgroundColor = options.backgroundColor || COLORS.salmon; 
+		var backgroundColor = options.backgroundColor || COLORS.salmon;
 		var textColor = options.textColor || COLORS.white;
 		var fullscreen = options.fullscreen || false;
 		var language = options.language || browserLocale.slice(0, 2); // Language code

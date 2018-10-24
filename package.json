@@ -4,8 +4,7 @@
   "version": "2.5.4",
   "main": "index.js",
   "dependencies": {
-    "deep-extend": "^0.5.0",
-    "ua-parser-js": "^0.7.17"
+    "ua-parser-js": "^0.7.18"
   },
   "author": "Mike MacCana <mike.maccana@gmail.com>",
   "repository": {
@@ -21,18 +20,12 @@
     "internet-explorer"
   ],
   "devDependencies": {
-    "browserify": "^16.1.1",
-    "gulp": "^3.9.1",
-    "gulp-uglify": "^3.0.0",
-    "gulp-util": "^3.0.8",
-    "node-sass": "^4.9.0",
-    "nodemon": "^1.17.5",
-    "uglify-js": "^3.3.28",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
+    "browserify": "^16.2.3",
+    "node-sass": "^4.9.3",
+    "nodemon": "^1.18.4"
   },
   "scripts": {
-    "build": "node-sass style.scss dist/style.css && browserify index.js -d -s outdatedBrowserRework | uglifyjs > dist/outdated-browser-rework.min.js",
+    "build": "node-sass style.scss dist/style.css && browserify index.js -d -s outdatedBrowserRework -o dist/outdated-browser-rework.js && uglifyjs dist/outdated-browser-rework.js --ie8 -c -m > dist/outdated-browser-rework.min.js",
     "watch": "nodemon --exec 'npm run build' --ignore dist"
   }
 }
