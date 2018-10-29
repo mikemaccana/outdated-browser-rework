@@ -2,7 +2,7 @@
 /* Highly dumbed down version of https://github.com/unclechu/node-deep-extend */
 
 /**
- * Extening object that entered in first argument.
+ * Extending object that entered in first argument.
  *
  * Returns extended object or false if have no target object or incorrect type.
  *
