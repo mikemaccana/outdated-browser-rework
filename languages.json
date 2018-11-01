@@ -10,6 +10,17 @@
     "callToAction": "Atualize o seu navegador agora",
     "close": "Fechar"
   },
+  "ca": {
+    "outOfDate": "El vostre navegador no està actualitzat!",
+    "update": {
+      "web": "Actualitzeu el vostre navegador per veure correctament aquest lloc web. ",
+      "googlePlay": "Instal·leu Chrome des de Google Play",
+      "appStore": "Actualitzeu iOS des de l'aplicació Configuració"
+    },
+    "url": "http://outdatedbrowser.com/es",
+    "callToAction": "Actualitzar el meu navegador ara",
+    "close": "Tancar"
+  },
   "cn": {
     "outOfDate": "您的浏览器已过时",
     "update": {
