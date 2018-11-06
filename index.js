@@ -29,9 +29,7 @@ var COLORS = {
 
 var updateDefaults = function(defaults, updatedValues) {
 	for (var key in updatedValues) {
-		if (defaults.hasOwnProperty(key)) {
-			defaults[key] = updatedValues[key]
-		}
+		defaults[key] = updatedValues[key]
 	}
 
 	return defaults
