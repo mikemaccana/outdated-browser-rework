@@ -93,6 +93,10 @@ module.exports = function(options) {
 			}
 		}
 
+		var parseMinorVersion = function (version) {
+			return version.replace(/[^\d.]/g,'').split(".")[1];
+		}
+
 		var isBrowserOutOfDate = function() {
 			var browserName = parsedUserAgent.browser.name
 			var browserMajorVersion = parsedUserAgent.browser.major
@@ -106,8 +110,24 @@ module.exports = function(options) {
 				}
 			} else if (!browserSupport[browserName]) {
 				isOutOfDate = true
-			} else if (browserMajorVersion < browserSupport[browserName]) {
-				isOutOfDate = true
+			} else {
+				var minVersion = browserSupport[browserName];
+				if (typeof minVersion == 'object') {
+					var minMajorVersion = minVersion.major;
+					var minMinorVersion = minVersion.minor;
+
+					if (browserMajorVersion < minMajorVersion) {
+						isOutOfDate = true
+					} else if (browserMajorVersion == minMajorVersion) {
+						var browserMinorVersion = parseMinorVersion(parsedUserAgent.browser.version)
+
+						if (browserMinorVersion < minMinorVersion) {
+							isOutOfDate = true
+						}
+					}
+				} else if (browserMajorVersion < minVersion) {
+					isOutOfDate = true
+				}
 			}
 			return isOutOfDate
 		}
