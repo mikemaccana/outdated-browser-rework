@@ -100,10 +100,13 @@ module.exports = function(options) {
 				browserMajorVersion = EDGEHTML_VS_EDGE_VERSIONS[browserMajorVersion]
 			}
 			var isOutOfDate = false
-			if (!browserSupport[browserName]) {
+			if (!(browserName in browserSupport)) {
 				if (!options.isUnknownBrowserOK) {
 					isOutOfDate = true
 				}
+			}
+			if (!browserSupport[browserName]) {
+				isOutOfDate = true
 			} else if (browserMajorVersion < browserSupport[browserName]) {
 				isOutOfDate = true
 			}
