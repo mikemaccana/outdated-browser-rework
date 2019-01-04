@@ -52,6 +52,8 @@ If you like, specify options, eg:
 			'Firefox': 50,
 			'Opera': 50,
 			'Vivaldi': 1,
+			// You could specify minor version too for those browsers that need it.
+			'Yandex': { major: 17, minor: 10 },
 			// You could specify a version here if you still support IE in 2017.
 			// You could also instead seriously consider what you're doing with your time and budget
 			'IE': false
@@ -96,7 +98,7 @@ See above for the default options.
 
 #### Options
 
- - __browserSupport__: Object - A matrix of browsers and their major versions - see above for demo. Anything less will be unsupported. `false` means all versions are unsupported.
+ - __browserSupport__: Object - A matrix of browsers and their versions - see above for demo. Anything less will be unsupported. `false` means all versions are unsupported.
  - __requiredCssProperty__: String - A CSS property that must be supported.
  - __messages__: Object - Customize upgrade messages for your purposes.  See the above default options for an example.
  - __language__: String - A language string to be used for the messages in the notification. Default is `en`. See `languages.json` for supported languages. Can be used instead of __messages__ if preferred.
