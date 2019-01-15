@@ -19,7 +19,8 @@ var EDGEHTML_VS_EDGE_VERSIONS = {
 	14: 31,
 	15: 39,
 	16: 41,
-	17: 42
+	17: 42,
+	18: 44
 }
 
 var COLORS = {
