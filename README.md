@@ -63,6 +63,7 @@ If you like, specify options, eg:
 		messages: {
 			en: {
 				outOfDate: "Your browser is out of date!",
+				unsupported: "Your browser is not supported!",
 				update: {
 					web: "Update your browser to view this website correctly. ",
 					googlePlay: "Please install Chrome from Google Play",
@@ -148,6 +149,7 @@ Someone using Webpack please provide Webpack instructions!
  
  - Add `isUnknownBrowserOK` option to determine how to handle unknown browsers.
  - Add `messages` to override the default out of date messages.
+ - Custom message for unsupported browsers vs out of date versions of browsers
  - Edge versions are now specified directly (rather than using EdgeHTML versions). For example, you now specify Edge `16` rather than `41`.
  - Better documentation
  - New translations
