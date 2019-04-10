@@ -1,5 +1,5 @@
 #outdated {
-  font-family: "Open Sans", "Segoe UI", sans-serif;
+  font-family: 'Open Sans', 'Segoe UI', sans-serif;
   position: absolute;
   background-color: #f25648;
   color: white;
@@ -22,7 +22,7 @@
   #outdated h6 {
     font-size: 25px;
     line-height: 25px;
-    margin: 12px 0; }
+    margin: 60px 0 12px; }
   #outdated p {
     font-size: 12px;
     line-height: 12px;
@@ -47,15 +47,17 @@
     top: 10px;
     width: auto;
     display: inline-table; }
-  #outdated .last[dir=rtl] {
+  #outdated .last[dir='rtl'] {
     left: 25px !important;
     right: auto !important; }
   #outdated #buttonCloseUpdateBrowser {
-    color: white;
+    background-color: white;
+    border-radius: 18px;
+    color: #f25648;
     display: block;
     font-size: 36px;
     height: 100%;
     line-height: 36px;
     position: relative;
     text-decoration: none;
-    width: 100%; }
+    width: 36px; }

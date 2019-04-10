@@ -205,7 +205,7 @@ module.exports = function(options) {
 				}
 			}
 
-			buttonClose.style.color = textColor
+			buttonClose.style.color = backgroundColor
 
 			buttonClose.onmousedown = function() {
 				outdatedUI.style.display = "none"

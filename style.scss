@@ -3,9 +3,12 @@ $salmon: #f25648;
 $primaryColor: $salmon;
 $secondaryColor: white;
 
+$margin: 12px;
+$closeSize: 36px;
+
 #outdated {
-	font-family: "Open Sans", "Segoe UI", sans-serif;
-	position:absolute;
+	font-family: 'Open Sans', 'Segoe UI', sans-serif;
+	position: absolute;
 	background-color: $primaryColor;
 	color: $secondaryColor;
 	display: none;
@@ -19,18 +22,18 @@ $secondaryColor: white;
 	z-index: 1500;
 	padding: 0 24px 24px 0;
 
-	&.fullscreen{
+	&.fullscreen {
 		height: 100%;
 	}
-	.vertical-center{
+	.vertical-center {
 		display: table-cell;
 		text-align: center;
-		vertical-align: middle;	  
+		vertical-align: middle;
 	}
 	h6 {
 		font-size: 25px;
 		line-height: 25px;
-		margin: 12px 0;
+		margin: (($margin * 2) + $closeSize) 0 $margin;
 	}
 
 	p {
@@ -50,7 +53,7 @@ $secondaryColor: white;
 		text-decoration: none;
 		width: 230px;
 		&:hover {
-			background-color:$secondaryColor;
+			background-color: $secondaryColor;
 			color: $primaryColor;
 		}
 	}
@@ -64,19 +67,21 @@ $secondaryColor: white;
 		display: inline-table;
 	}
 
-	.last[dir=rtl] {
+	.last[dir='rtl'] {
 		left: 25px !important;
 		right: auto !important;
 	}
 
 	#buttonCloseUpdateBrowser {
-		color: $secondaryColor;
+		background-color: $secondaryColor;
+		border-radius: $closeSize / 2;
+		color: $primaryColor;
 		display: block;
-		font-size: 36px;
+		font-size: $closeSize;
 		height: 100%;
-		line-height: 36px;
+		line-height: $closeSize;
 		position: relative;
 		text-decoration: none;
-		width: 100%;
+		width: $closeSize;
 	}
 }
