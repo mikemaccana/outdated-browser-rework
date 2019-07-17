@@ -69,6 +69,8 @@ If you like, specify options, eg:
 					googlePlay: "Please install Chrome from Google Play",
 					appStore: "Please update iOS from the Settings App"
 				},
+				// You can set the URL to null if you do not want a clickable link or provide
+				// your own markup in the `update.web` message.
 				url: "http://outdatedbrowser.com/",
 				callToAction: "Update my browser now",
 				close: "Close"

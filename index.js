@@ -222,11 +222,14 @@ module.exports = function(options) {
 				web:
 					"<p>" +
 					messages.update.web +
-					'<a id="buttonUpdateBrowser" rel="nofollow" href="' +
-					messages.url +
-					'">' +
-					messages.callToAction +
-					"</a></p>",
+					(messages.url ? (
+						'<a id="buttonUpdateBrowser" rel="nofollow" href="' +
+						messages.url +
+						'">' +
+						messages.callToAction +
+						"</a>"
+					) : '') +
+					"</p>",
 				googlePlay:
 					"<p>" +
 					messages.update.googlePlay +
