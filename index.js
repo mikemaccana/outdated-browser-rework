@@ -116,11 +116,13 @@ module.exports = function(options) {
 				var edgeVersion = EDGEHTML_VS_EDGE_VERSIONS[browserMajorVersion]
 				var IS_UNKNOWN_EDGEHTML = !edgeVersion 
 				if (IS_UNKNOWN_EDGEHTML) {
-					var lastKnownEdgeHtmlVersion = Object.keys(EDGEHTML_VS_EDGE_VERSIONS)[EDGEHTML_VS_EDGE_VERSIONS.length - 1];
-					if (browserMajorVersion > lastKnownEdgeVersion) {
-						browserMajorVersion = EDGEHTML_VS_EDGE_VERSIONS[lastKnownEdgeHtmlVersion];
+					var lastKnownEdgeHtmlVersion = Object.keys(EDGEHTML_VS_EDGE_VERSIONS)[EDGEHTML_VS_EDGE_VERSIONS.length - 1]
+					var IS_NEW_UNKNOWN_EDGEHTML = browserMajorVersion > lastKnownEdgeVersion
+					if (IS_NEW_UNKNOWN_EDGEHTML) {
+						edgeVersion = EDGEHTML_VS_EDGE_VERSIONS[lastKnownEdgeHtmlVersion]
 					}
 				}
+				browserMajorVersion = edgeVersion
 			}
 			var isOutOfDate = false
 			if (isBrowserUnsupported()) {
