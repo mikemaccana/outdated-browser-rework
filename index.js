@@ -111,22 +111,22 @@ module.exports = function(options) {
 
 		var isBrowserOutOfDate = function() {
 			var browserName = parsedUserAgent.browser.name
+			var browserMajorVersion = parsedUserAgent.browser.major
+			if (browserName === "Edge") {
+				var edgeVersion = EDGEHTML_VS_EDGE_VERSIONS[browserMajorVersion]
+				var IS_UNKNOWN_EDGEHTML = !edgeVersion 
+				if (IS_UNKNOWN_EDGEHTML) {
+					var lastKnownEdgeHtmlVersion = Object.keys(EDGEHTML_VS_EDGE_VERSIONS)[EDGEHTML_VS_EDGE_VERSIONS.length - 1];
+					if (browserMajorVersion > lastKnownEdgeVersion) {
+						browserMajorVersion = EDGEHTML_VS_EDGE_VERSIONS[lastKnownEdgeHtmlVersion];
+					}
+				}
+			}
 			var isOutOfDate = false
 			if (isBrowserUnsupported()) {
 				isOutOfDate = true;
 			} else if (browserName in browserSupport) {
 				var minVersion = browserSupport[browserName];
-				var browserMajorVersion = parsedUserAgent.browser.major
-				if (browserName === "Edge") {
-					var edgeVersion = EDGEHTML_VS_EDGE_VERSIONS[browserMajorVersion]
-					var IS_UNKNOWN_EDGEHTML = !edgeVersion 
-					if (IS_UNKNOWN_EDGEHTML) {
-						var lastKnownEdgeHtmlVersion = Object.keys(EDGEHTML_VS_EDGE_VERSIONS)[EDGEHTML_VS_EDGE_VERSIONS.length - 1];
-						if (browserMajorVersion > lastKnownEdgeVersion) {
-							browserMajorVersion = EDGEHTML_VS_EDGE_VERSIONS[lastKnownEdgeHtmlVersion];
-						}
-					}
-				}
 				if (typeof minVersion == 'object') {
 					var minMajorVersion = minVersion.major;
 					var minMinorVersion = minVersion.minor;
