@@ -119,7 +119,7 @@ module.exports = function(options) {
 				if (IS_UNKNOWN_EDGEHTML) {
 					var IS_NEW_UNKNOWN_EDGEHTML = browserMajorVersion > LAST_KNOWN_EDGEHTML_VERSION
 					if (IS_NEW_UNKNOWN_EDGEHTML) {
-						edgeVersion = EDGEHTML_VS_EDGE_VERSIONS[lastKnownEdgeHtmlVersion]
+						edgeVersion = EDGEHTML_VS_EDGE_VERSIONS[LAST_KNOWN_EDGEHTML_VERSION]
 					}
 				}
 				browserMajorVersion = edgeVersion
