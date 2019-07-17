@@ -96,16 +96,25 @@ module.exports = function(options) {
 			return version.replace(/[^\d.]/g,'').split(".")[1];
 		}
 
+		var isBrowserUnsupported = function() {
+			var browserName = parsedUserAgent.browser.name
+			var isUnsupported = false
+			if (!(browserName in browserSupport)) {
+				if (!options.isUnknownBrowserOK) {
+					isUnsupported = true
+				}
+			} else if (!browserSupport[browserName]) {
+				isUnsupported = true
+			}
+			return isUnsupported;
+		}
+
 		var isBrowserOutOfDate = function() {
 			var browserName = parsedUserAgent.browser.name
 			var isOutOfDate = false
-			if (!(browserName in browserSupport)) {
-				if (!options.isUnknownBrowserOK) {
-					isOutOfDate = true
-				}
-			} else if (!browserSupport[browserName]) {
-				isOutOfDate = true
-			} else {
+			if (isBrowserUnsupported()) {
+				isOutOfDate = true;
+			} else if (browserName in browserSupport) {
 				var minVersion = browserSupport[browserName];
 				var browserMajorVersion = parsedUserAgent.browser.major
 				if (browserName === "Edge") {
@@ -236,9 +245,14 @@ module.exports = function(options) {
 
 			var updateMessage = updateMessages[updateSource]
 
+			var browserSupportMessage = messages.outOfDate;
+			if (isBrowserUnsupported() && messages.unsupported) {
+				browserSupportMessage = messages.unsupported;
+			}
+
 			return (
 				'<div class="vertical-center"><h6>' +
-				messages.outOfDate +
+				browserSupportMessage +
 				"</h6>" +
 				updateMessage +
 				'<p class="last"><a href="#" id="buttonCloseUpdateBrowser" title="' +
