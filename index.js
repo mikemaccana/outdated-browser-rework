@@ -13,15 +13,16 @@ var DEFAULTS = {
 	IE: false
 }
 
+var LAST_KNOWN_EDGEHTML_VERSION = 18
 var EDGEHTML_VS_EDGE_VERSIONS = {
 	12: 0.1,
 	13: 21,
 	14: 31,
 	15: 39,
 	16: 41,
-	17: 42,
-	18: 44
+	17: 42
 }
+EDGEHTML_VS_EDGE_VERSIONS[LAST_KNOWN_EDGEHTML_VERSION] = 44
 
 var COLORS = {
 	salmon: "#f25648",
@@ -116,8 +117,7 @@ module.exports = function(options) {
 				var edgeVersion = EDGEHTML_VS_EDGE_VERSIONS[browserMajorVersion]
 				var IS_UNKNOWN_EDGEHTML = !edgeVersion 
 				if (IS_UNKNOWN_EDGEHTML) {
-					var lastKnownEdgeHtmlVersion = Object.keys(EDGEHTML_VS_EDGE_VERSIONS)[EDGEHTML_VS_EDGE_VERSIONS.length - 1]
-					var IS_NEW_UNKNOWN_EDGEHTML = browserMajorVersion > lastKnownEdgeVersion
+					var IS_NEW_UNKNOWN_EDGEHTML = browserMajorVersion > LAST_KNOWN_EDGEHTML_VERSION
 					if (IS_NEW_UNKNOWN_EDGEHTML) {
 						edgeVersion = EDGEHTML_VS_EDGE_VERSIONS[lastKnownEdgeHtmlVersion]
 					}
