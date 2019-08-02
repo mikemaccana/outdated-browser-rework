@@ -145,7 +145,46 @@ Doing this will mean that `dist/oldbrowser.js` will only include `outdated-brows
 
 ### For Webpack users
 
-Someone using Webpack please provide Webpack instructions!
+Add the following to your main javascript file that is included in each of your pages:
+
+```js
+global.outdatedBrowserRework = require("outdated-browser-rework/dist/outdated-browser-rework");
+
+outdatedBrowserRework({
+    browserSupport: {
+        'Chrome': 57, // Includes Chrome for mobile devices
+        'Edge': 39,
+        'Safari': 10,
+        'Mobile Safari': 10,
+        'Firefox': 50,
+        'Opera': 50,
+        'Vivaldi': 1,
+        // You could specify minor version too for those browsers that need it.
+        'Yandex': { major: 17, minor: 10 },
+        // You could specify a version here if you still support IE in 2017.
+        // You could also instead seriously consider what you're doing with your time and budget
+        'IE': false
+    },
+    requireChromeOnAndroid: false,
+    isUnknownBrowserOK: false,
+    messages: {
+        en: {
+            outOfDate: "Your browser is out of date!",
+            unsupported: "Your browser is not supported!",
+            update: {
+                web: "Update your browser to view this website correctly. ",
+                googlePlay: "Please install Chrome from Google Play",
+                appStore: "Please update iOS from the Settings App"
+            },
+            // You can set the URL to null if you do not want a clickable link or provide
+            // your own markup in the `update.web` message.
+            url: "http://outdatedbrowser.com/",
+            callToAction: "Update my browser now",
+            close: "Close"
+        }
+    }
+});
+```
 
 ## Outdated Browser Rework Version 2 notes 
  
