@@ -191,12 +191,12 @@
     "outOfDate": "Twoja przeglądarka jest przestarzała!",
     "update": {
       "web": "Zaktualizuj swoją przeglądarkę, aby poprawnie wyświetlić tę stronę. ",
-      "googlePlay": "Please install Chrome from Google Play",
-      "appStore": "Please update iOS from the Settings App"
+      "googlePlay": "Proszę zainstalować przeglądarkę Chrome ze sklepu Google Play",
+      "appStore": "Proszę zaktualizować iOS z Ustawień"
     },
     "url": "http://outdatedbrowser.com/pl",
     "callToAction": "Zaktualizuj przeglądarkę już teraz",
-    "close": "Close"
+    "close": "Zamknij"
   },
   "pt": {
     "outOfDate": "O seu browser est&aacute; desatualizado!",
