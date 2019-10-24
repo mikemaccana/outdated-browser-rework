@@ -145,7 +145,48 @@ Doing this will mean that `dist/oldbrowser.js` will only include `outdated-brows
 
 ### For Webpack users
 
-Someone using Webpack please provide Webpack instructions!
+First of all, to bundle `outdated-browser-rework` by itself, create a new entry point in your webpack config file. You'll also need to install `style-loader` and `css-loader` in order to import the package's CSS. Your webpack configuration should look something like this:
+```js
+const path = require('path');
+
+module.exports = {
+  entry: {
+    main: path.join(__dirname, 'src/index.js'),
+    'outdated-browser-rework': path.join(__dirname, 'src/outdated-browser-rework.js')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  }
+};
+```
+
+Secondly, make use of `outdated-browser-rework` in `src/outdated-browser-rework.js`:
+```js
+import outdatedBrowser from 'outdated-browser-rework';
+import 'outdated-browser-rework/dist/style.css';
+
+outdatedBrowser();
+```
+
+Finally, add the generated JS file in your HTML:
+```html
+<!doctype html>
+<html>
+  <head>
+    <title>Webpack example</title>
+  </head>
+  <body>
+    <div id="outdated"></div>
+    <script src="outdated-browser-rework.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
+```
 
 ## Outdated Browser Rework Version 2 notes 
  
