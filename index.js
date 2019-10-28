@@ -251,7 +251,9 @@ module.exports = function(options) {
 				browserSupportMessage +
 				"</h6>" +
 				updateMessage +
-				'<p class="last"><a href="#" id="buttonCloseUpdateBrowser" title="' +
+				'<p class="last"><a href="#" id="buttonCloseUpdateBrowser" aria-label="' +
+				messages.close +
+				'" title="' +
 				messages.close +
 				'">&times;</a></p></div>'
 			)
