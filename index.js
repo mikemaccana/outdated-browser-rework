@@ -227,6 +227,9 @@ module.exports = function(options) {
 						messages.url +
 						'">' +
 						messages.callToAction +
+						'<span>(' +
+						messages.newWindowText +
+						')</span>' +
 						"</a>"
 					) : '') +
 					"</p>",

@@ -22,7 +22,7 @@ This module does not need jQuery.
 
 Outdated Browser Rework was created by, for, and is used in production at, [EV HTTPS provider CertSimple](https://certsimple.com). You can see it working there.
 
-If you want to force your browser to be unsupported, you can also check out [a demo where all browsers are unsupported](https://mikemaccana.github.io/outdated-browser-rework/). 
+If you want to force your browser to be unsupported, you can also check out [a demo where all browsers are unsupported](https://mikemaccana.github.io/outdated-browser-rework/).
 
 ## Usage (with browserify)
 
@@ -59,7 +59,7 @@ If you like, specify options, eg:
 			'IE': false
 		},
 		requireChromeOnAndroid: false,
-		isUnknownBrowserOK: false, 
+		isUnknownBrowserOK: false,
 		messages: {
 			en: {
 				outOfDate: "Your browser is out of date!",
@@ -73,11 +73,12 @@ If you like, specify options, eg:
 				// your own markup in the `update.web` message.
 				url: "http://outdatedbrowser.com/",
 				callToAction: "Update my browser now",
-				close: "Close"
+				close: "Close",
+				newWindowText: "opens a new window/tab"
 			}
 		}
 	})
-		
+
 The particular versions used in this example are the defaults, by the way!
 
 See below for more options.
@@ -96,7 +97,7 @@ In `<head>`, before any other `script` tags:
 		<script>
 				outdatedBrowserRework();
 		</script>
-		
+
 See above for the default options.
 
 #### Options
@@ -147,8 +148,8 @@ Doing this will mean that `dist/oldbrowser.js` will only include `outdated-brows
 
 Someone using Webpack please provide Webpack instructions!
 
-## Outdated Browser Rework Version 2 notes 
- 
+## Outdated Browser Rework Version 2 notes
+
  - Add `isUnknownBrowserOK` option to determine how to handle unknown browsers.
  - Add `messages` to override the default out of date messages.
  - Custom message for unsupported browsers vs out of date versions of browsers
@@ -157,9 +158,9 @@ Someone using Webpack please provide Webpack instructions!
  - New translations
  - Custom upgrade messages
  - New `false` option to disable browser support.
- - IE now defaults to `false` - ie, display a message telling users to get a new browser on any version of IE. You can still specify `6` to `11` if, for some reason, you still support IE in 2018. Tip: you should not support IE in 2018. 
+ - IE now defaults to `false` - ie, display a message telling users to get a new browser on any version of IE. You can still specify `6` to `11` if, for some reason, you still support IE in 2018. Tip: you should not support IE in 2018.
  - CSS file is included
- - Update `ua-parser-js` to fix parsing some more esoteric UAs 
+ - Update `ua-parser-js` to fix parsing some more esoteric UAs
 
 ## Differences from Bürocratik's Outdated Browser 1.1.0
 

@@ -8,7 +8,8 @@
     },
     "url": "http://outdatedbrowser.com/br",
     "callToAction": "Atualize o seu navegador agora",
-    "close": "Fechar"
+		"close": "Fechar",
+		"newWindowText": "opens a new tab/window"
   },
   "ca": {
     "outOfDate": "El vostre navegador no està actualitzat!",
@@ -19,7 +20,8 @@
     },
     "url": "http://outdatedbrowser.com/es",
     "callToAction": "Actualitzar el meu navegador ara",
-    "close": "Tancar"
+		"close": "Tancar",
+		"newWindowText": "opens a new tab/window"
   },
   "cn": {
     "outOfDate": "您的浏览器已过时",
@@ -30,7 +32,8 @@
     },
     "url": "http://outdatedbrowser.com/cn",
     "callToAction": "现在升级",
-    "close": "关闭"
+		"close": "关闭",
+		"newWindowText": "opens a new tab/window"
   },
   "cz": {
     "outOfDate": "Váš prohlížeč je zastaralý!",
@@ -41,7 +44,8 @@
     },
     "url": "http://outdatedbrowser.com/cz",
     "callToAction": "Aktualizovat nyní svůj prohlížeč",
-    "close": "Zavřít"
+		"close": "Zavřít",
+		"newWindowText": "opens a new tab/window"
   },
    "da": {
     "outOfDate": "Din browser er forældet!",
@@ -52,7 +56,8 @@
     },
     "url": "http://outdatedbrowser.com/da",
     "callToAction": "Opdatér din browser nu",
-    "close": "Luk"
+		"close": "Luk",
+		"newWindowText": "opens a new tab/window"
   },
   "de": {
     "outOfDate": "Ihr Browser ist veraltet!",
@@ -63,7 +68,8 @@
     },
     "url": "http://outdatedbrowser.com/de",
     "callToAction": "Den Browser jetzt aktualisieren ",
-    "close": "Schließen"
+		"close": "Schließen",
+		"newWindowText": "opens a new tab/window"
   },
   "ee": {
     "outOfDate": "Sinu veebilehitseja on vananenud!",
@@ -74,7 +80,8 @@
     },
     "url": "http://outdatedbrowser.com/ee",
     "callToAction": "Uuenda oma veebilehitsejat kohe",
-    "close": "Sulge"
+		"close": "Sulge",
+		"newWindowText": "opens a new tab/window"
   },
   "en": {
     "outOfDate": "Your browser is out-of-date!",
@@ -85,7 +92,8 @@
     },
     "url": "http://outdatedbrowser.com/",
     "callToAction": "Update my browser now",
-    "close": "Close"
+		"close": "Close",
+		"newWindowText": "opens a new tab/window"
   },
   "es": {
     "outOfDate": "¡Tu navegador está anticuado!",
@@ -96,7 +104,8 @@
     },
     "url": "http://outdatedbrowser.com/es",
     "callToAction": "Actualizar mi navegador ahora",
-    "close": "Cerrar"
+		"close": "Cerrar",
+		"newWindowText": "opens a new tab/window"
   },
   "fa": {
     "rightToLeft": true,
@@ -108,7 +117,8 @@
     },
     "url": "http://outdatedbrowser.com/",
     "callToAction": "همین حالا مرورگرم را بروز کن",
-    "close": "Close"
+		"close": "Close",
+		"newWindowText": "opens a new tab/window"
   },
   "fi": {
     "outOfDate": "Selaimesi on vanhentunut!",
@@ -119,7 +129,8 @@
     },
     "url": "http://outdatedbrowser.com/fi",
     "callToAction": "P&auml;ivit&auml; selaimeni nyt ",
-    "close": "Sulje"
+		"close": "Sulje",
+		"newWindowText": "opens a new tab/window"
   },
   "fr": {
     "outOfDate": "Votre navigateur n'est plus compatible !",
@@ -130,7 +141,8 @@
     },
     "url": "http://outdatedbrowser.com/fr",
     "callToAction": "Mettre à jour maintenant ",
-    "close": "Fermer"
+		"close": "Fermer",
+		"newWindowText": "opens a new tab/window"
   },
   "hu": {
     "outOfDate": "A böngészője elavult!",
@@ -141,7 +153,8 @@
     },
     "url": "http://outdatedbrowser.com/hu",
     "callToAction": "A böngészőm frissítése ",
-    "close": "Close"
+		"close": "Close",
+		"newWindowText": "opens a new tab/window"
   },
   "id":{
     "outOfDate": "Browser yang Anda gunakan sudah ketinggalan zaman!",
@@ -152,7 +165,8 @@
     },
     "url": "http://outdatedbrowser.com/",
     "callToAction": "Perbaharui browser sekarang ",
-    "close": "Close"
+		"close": "Close",
+		"newWindowText": "opens a new tab/window"
   },
   "it": {
     "outOfDate": "Il tuo browser non &egrave; aggiornato!",
@@ -163,7 +177,8 @@
     },
     "url": "http://outdatedbrowser.com/it",
     "callToAction": "Aggiorna ora",
-    "close": "Chiudi"
+		"close": "Chiudi",
+		"newWindowText": "opens a new tab/window"
   },
   "lt":{
     "outOfDate": "Jūsų naršyklės versija yra pasenusi!",
@@ -174,7 +189,8 @@
     },
     "url": "http://outdatedbrowser.com/",
     "callToAction": "Atnaujinti naršyklę ",
-    "close": "Close"
+		"close": "Close",
+		"newWindowText": "opens a new tab/window"
   },
   "nl": {
     "outOfDate": "Je gebruikt een oude browser!",
@@ -185,7 +201,8 @@
     },
     "url": "http://outdatedbrowser.com/nl",
     "callToAction": "Update mijn browser nu ",
-    "close": "Sluiten"
+		"close": "Sluiten",
+		"newWindowText": "opens a new tab/window"
   },
   "pl": {
     "outOfDate": "Twoja przeglądarka jest przestarzała!",
@@ -196,7 +213,8 @@
     },
     "url": "http://outdatedbrowser.com/pl",
     "callToAction": "Zaktualizuj przeglądarkę już teraz",
-    "close": "Zamknij"
+		"close": "Zamknij",
+		"newWindowText": "opens a new tab/window"
   },
   "pt": {
     "outOfDate": "O seu browser est&aacute; desatualizado!",
@@ -207,7 +225,8 @@
     },
     "url": "http://outdatedbrowser.com/pt",
     "callToAction": "Atualize o seu browser agora",
-    "close": "Fechar"
+		"close": "Fechar",
+		"newWindowText": "opens a new tab/window"
   },
   "ro": {
     "outOfDate": "Browserul este învechit!",
@@ -218,7 +237,8 @@
     },
     "url": "http://outdatedbrowser.com/",
     "callToAction": "Actualizați browserul acum!",
-    "close": "Close"
+		"close": "Close",
+		"newWindowText": "opens a new tab/window"
   },
   "ru": {
     "outOfDate": "Ваш браузер устарел!",
@@ -229,7 +249,8 @@
     },
     "url": "http://outdatedbrowser.com/ru",
     "callToAction": "Обновить мой браузер ",
-    "close": "Закрыть"
+		"close": "Закрыть",
+		"newWindowText": "opens a new tab/window"
   },
   "si": {
     "outOfDate": "Vaš brskalnik je zastarel!",
@@ -240,7 +261,8 @@
     },
     "url": "http://outdatedbrowser.com/si",
     "callToAction": "Posodobi brskalnik ",
-    "close": "Zapri"
+		"close": "Zapri",
+		"newWindowText": "opens a new tab/window"
   },
   "sv": {
     "outOfDate": "Din webbläsare stödjs ej längre!",
@@ -251,7 +273,8 @@
     },
     "url": "http://outdatedbrowser.com/",
     "callToAction": "Uppdatera min webbläsare nu",
-    "close": "Stäng"
+		"close": "Stäng",
+		"newWindowText": "opens a new tab/window"
   },
   "ua": {
     "outOfDate": "Ваш браузер застарів!",
@@ -262,6 +285,7 @@
     },
     "url": "http://outdatedbrowser.com/ua",
     "callToAction": "Оновити мій браузер ",
-    "close": "Закрити"
+		"close": "Закрити",
+		"newWindowText": "opens a new tab/window"
   }
 }
