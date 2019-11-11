@@ -22,7 +22,7 @@ This module does not need jQuery.
 
 Outdated Browser Rework was created by, for, and is used in production at, [EV HTTPS provider CertSimple](https://certsimple.com). You can see it working there.
 
-If you want to force your browser to be unsupported, you can also check out [a demo where all browsers are unsupported](https://mikemaccana.github.io/outdated-browser-rework/). 
+If you want to force your browser to be unsupported, you can also check out [a demo where all browsers are unsupported](https://mikemaccana.github.io/outdated-browser-rework/).
 
 ## Usage (with browserify)
 
@@ -32,52 +32,58 @@ If you want to force your browser to be unsupported, you can also check out [a d
 
 In `<head>`, before any other `script` tags:
 
-	<script src="/js/dist/oldbrowser.js"></script>
+```html
+<script src="/js/dist/oldbrowser.js"></script>
+```
 
 ### In `oldbrowser.js`
 
 Start `outdated-browser-rework` and call it with your preferred options:
 
-	var outdatedBrowserRework = require("outdated-browser-rework");
-	outdatedBrowserRework();
+```js
+var outdatedBrowserRework = require("outdated-browser-rework");
+outdatedBrowserRework();
+```
 
 If you like, specify options, eg:
 
-	outdatedBrowserRework({
-		browserSupport: {
-			'Chrome': 57, // Includes Chrome for mobile devices
-			'Edge': 39,
-			'Safari': 10,
-			'Mobile Safari': 10,
-			'Firefox': 50,
-			'Opera': 50,
-			'Vivaldi': 1,
-			// You could specify minor version too for those browsers that need it.
-			'Yandex': { major: 17, minor: 10 },
-			// You could specify a version here if you still support IE in 2017.
-			// You could also instead seriously consider what you're doing with your time and budget
-			'IE': false
-		},
-		requireChromeOnAndroid: false,
-		isUnknownBrowserOK: false, 
-		messages: {
-			en: {
-				outOfDate: "Your browser is out of date!",
-				unsupported: "Your browser is not supported!",
-				update: {
-					web: "Update your browser to view this website correctly. ",
-					googlePlay: "Please install Chrome from Google Play",
-					appStore: "Please update iOS from the Settings App"
-				},
-				// You can set the URL to null if you do not want a clickable link or provide
-				// your own markup in the `update.web` message.
-				url: "http://outdatedbrowser.com/",
-				callToAction: "Update my browser now",
-				close: "Close"
-			}
-		}
-	})
-		
+```js
+outdatedBrowserRework({
+  browserSupport: {
+    'Chrome': 57, // Includes Chrome for mobile devices
+    'Edge': 39,
+    'Safari': 10,
+    'Mobile Safari': 10,
+    'Firefox': 50,
+    'Opera': 50,
+    'Vivaldi': 1,
+    // You could specify minor version too for those browsers that need it.
+    'Yandex': { major: 17, minor: 10 },
+    // You could specify a version here if you still support IE in 2017.
+    // You could also instead seriously consider what you're doing with your time and budget
+    'IE': false
+  },
+  requireChromeOnAndroid: false,
+  isUnknownBrowserOK: false,
+  messages: {
+    en: {
+      outOfDate: "Your browser is out of date!",
+      unsupported: "Your browser is not supported!",
+      update: {
+        web: "Update your browser to view this website correctly. ",
+        googlePlay: "Please install Chrome from Google Play",
+        appStore: "Please update iOS from the Settings App"
+      },
+      // You can set the URL to null if you do not want a clickable link or provide
+      // your own markup in the `update.web` message.
+      url: "http://outdatedbrowser.com/",
+      callToAction: "Update my browser now",
+      close: "Close"
+    }
+  }
+})
+```
+
 The particular versions used in this example are the defaults, by the way!
 
 See below for more options.
@@ -92,11 +98,13 @@ Browsers that are __older__ than the versions supplied, or who use a browser whe
 ### In your template
 In `<head>`, before any other `script` tags:
 
-		<script src="/js/dist/outdated-browser-rework.min.js"></script>
-		<script>
-				outdatedBrowserRework();
-		</script>
-		
+```html
+<script src="/js/dist/outdated-browser-rework.min.js"></script>
+<script>
+  outdatedBrowserRework();
+</script>
+```
+
 See above for the default options.
 
 #### Options
@@ -112,17 +120,23 @@ See above for the default options.
 
 If you're using [sass-npm](https://www.npmjs.com/package/sass-npm) you can just import the npm module, and it will load `index.scss`:
 
-	@import "outdated-browser-rework.scss";
+```scss
+@import "outdated-browser-rework.scss";
+```
 
 Otherwise compile the sass and put it somewhere. Then load that via a `link` tag inside `<head>`:
 
-	<link rel="stylesheet" href="/css/outdated-browser.css">
+```html
+<link rel="stylesheet" href="/css/outdated-browser.css">
+```
 
 ## HTML
 
 Add the required HTML at the end of your document:
 
-			<div id="outdated"></div>
+```html
+<div id="outdated"></div>
+```
 
 Yes, [IDs suck](http://2ality.com/2012/08/ids-are-global.html) but old browsers don't support gettting elements by class name.
 
@@ -134,12 +148,14 @@ In modern times we normally concatenate and combine different JS modules using [
 
 Add the following underneath your existing `js` task:
 
-	gulp
-		.src('./public/js/src/oldbrowser.js')
-		.pipe(browserify({
-				debug : ! gulp.env.production
-		}))
-		.pipe(gulp.dest('./public/js/dist'))
+```js
+gulp
+  .src('./public/js/src/oldbrowser.js')
+  .pipe(browserify({
+    debug: !gulp.env.production
+  }))
+  .pipe(gulp.dest('./public/js/dist'))
+```
 
 Doing this will mean that `dist/oldbrowser.js` will only include `outdated-browser-rework` and its dependency `user-agent-parser`, without anything else to get in the way.
 
@@ -147,8 +163,8 @@ Doing this will mean that `dist/oldbrowser.js` will only include `outdated-brows
 
 Someone using Webpack please provide Webpack instructions!
 
-## Outdated Browser Rework Version 2 notes 
- 
+## Outdated Browser Rework Version 2 notes
+
  - Add `isUnknownBrowserOK` option to determine how to handle unknown browsers.
  - Add `messages` to override the default out of date messages.
  - Custom message for unsupported browsers vs out of date versions of browsers
@@ -157,9 +173,9 @@ Someone using Webpack please provide Webpack instructions!
  - New translations
  - Custom upgrade messages
  - New `false` option to disable browser support.
- - IE now defaults to `false` - ie, display a message telling users to get a new browser on any version of IE. You can still specify `6` to `11` if, for some reason, you still support IE in 2018. Tip: you should not support IE in 2018. 
+ - IE now defaults to `false` - ie, display a message telling users to get a new browser on any version of IE. You can still specify `6` to `11` if, for some reason, you still support IE in 2018. Tip: you should not support IE in 2018.
  - CSS file is included
- - Update `ua-parser-js` to fix parsing some more esoteric UAs 
+ - Update `ua-parser-js` to fix parsing some more esoteric UAs
 
 ## Differences from Bürocratik's Outdated Browser 1.1.0
 
