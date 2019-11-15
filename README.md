@@ -138,7 +138,7 @@ Add the required HTML at the end of your document:
 <div id="outdated"></div>
 ```
 
-Yes, [IDs suck](http://2ality.com/2012/08/ids-are-global.html) but old browsers don't support gettting elements by class name.
+Yes, [IDs suck](http://2ality.com/2012/08/ids-are-global.html) but old browsers don't support getting elements by class name.
 
 ## Bundling the JavaScript
 
