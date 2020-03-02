@@ -112,9 +112,12 @@ module.exports = function(options) {
 		var isBrowserOutOfDate = function() {
 			var browserName = parsedUserAgent.browser.name
 			var browserMajorVersion = parsedUserAgent.browser.major
-			if (browserName === "Edge") {
+
+			// Edge legacy needed a version mapping, Edge on Chromium doesn't
+			if (browserName === "Edge" && browserMajorVersion <= 18) {
 				browserMajorVersion = EDGEHTML_VS_EDGE_VERSIONS[browserMajorVersion]
 			}
+
 			var isOutOfDate = false
 			if (isBrowserUnsupported()) {
 				isOutOfDate = true;
