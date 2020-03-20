@@ -93,7 +93,7 @@ module.exports = function(options) {
 		}
 
 		var parseMinorVersion = function (version) {
-			return version.replace(/[^\d.]/g,'').split(".")[1];
+			return version.replace(/[^\d.]/g,'').split(".")[1]
 		}
 
 		var isBrowserUnsupported = function() {
@@ -106,31 +106,42 @@ module.exports = function(options) {
 			} else if (!browserSupport[browserName]) {
 				isUnsupported = true
 			}
-			return isUnsupported;
+			return isUnsupported
 		}
 
 		var isBrowserOutOfDate = function() {
 			var browserName = parsedUserAgent.browser.name
+			var browserVersion = parsedUserAgent.browser.version
 			var browserMajorVersion = parsedUserAgent.browser.major
+			var osName = parsedUserAgent.os.name
+			var osVersion = parsedUserAgent.os.version
 
 			// Edge legacy needed a version mapping, Edge on Chromium doesn't
 			if (browserName === "Edge" && browserMajorVersion <= 18) {
 				browserMajorVersion = EDGEHTML_VS_EDGE_VERSIONS[browserMajorVersion]
 			}
 
+			// Firefox Mobile on iOS is essentially Mobile Safari so needs to be handled that way
+			// See: https://github.com/mikemaccana/outdated-browser-rework/issues/98#issuecomment-597721173
+			if (browserName === 'Firefox' && osName === 'iOS') {
+				browserName = 'Mobile Safari'
+				browserVersion = osVersion
+				browserMajorVersion = osVersion.substring(0, osVersion.indexOf('.'))
+			}
+
 			var isOutOfDate = false
 			if (isBrowserUnsupported()) {
 				isOutOfDate = true;
 			} else if (browserName in browserSupport) {
-				var minVersion = browserSupport[browserName];
+				var minVersion = browserSupport[browserName]
 				if (typeof minVersion == 'object') {
-					var minMajorVersion = minVersion.major;
-					var minMinorVersion = minVersion.minor;
+					var minMajorVersion = minVersion.major
+					var minMinorVersion = minVersion.minor
 
 					if (browserMajorVersion < minMajorVersion) {
 						isOutOfDate = true
 					} else if (browserMajorVersion == minMajorVersion) {
-						var browserMinorVersion = parseMinorVersion(parsedUserAgent.browser.version)
+						var browserMinorVersion = parseMinorVersion(browserVersion)
 
 						if (browserMinorVersion < minMinorVersion) {
 							isOutOfDate = true
