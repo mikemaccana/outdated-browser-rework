@@ -54,6 +54,7 @@ module.exports = function (parsedUserAgent, options) {
 		return isUnsupported;
 	}
 
+	var isBrowserUnsupportedResult = isBrowserUnsupported();
 	var isBrowserOutOfDate = function () {
 		var browserName = parsedUserAgent.browser.name;
 		var browserVersion = parsedUserAgent.browser.version;
@@ -77,7 +78,7 @@ module.exports = function (parsedUserAgent, options) {
 		debugger;
 
 		var isOutOfDate = false
-		if (isBrowserUnsupported()) {
+		if (isBrowserUnsupportedResult) {
 			isOutOfDate = true;
 		} else if (browserName in browserSupport) {
 			var minVersion = browserSupport[browserName]
@@ -133,7 +134,7 @@ module.exports = function (parsedUserAgent, options) {
 	return {
 		isAndroidButNotChrome: isAndroidButNotChrome,
 		isBrowserOutOfDate: isBrowserOutOfDate(),
-		isBrowserUnsupported: isBrowserUnsupported(),
+		isBrowserUnsupported: isBrowserUnsupportedResult,
 		isPropertySupported: isPropertySupported(requiredCssProperty)
 	};
 }
