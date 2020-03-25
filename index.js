@@ -1,58 +1,27 @@
-var UserAgentParser = require("ua-parser-js")
+var evaluateBrowser = require("./evaluateBrowser")
 var languageMessages = require("./languages.json")
 var deepExtend = require("./extend")
-
-var DEFAULTS = {
-	Chrome: 57, // Includes Chrome for mobile devices
-	Edge: 39,
-	Safari: 10,
-	"Mobile Safari": 10,
-	Opera: 50,
-	Firefox: 50,
-	Vivaldi: 1,
-	IE: false
-}
-
-var EDGEHTML_VS_EDGE_VERSIONS = {
-	12: 0.1,
-	13: 21,
-	14: 31,
-	15: 39,
-	16: 41,
-	17: 42,
-	18: 44
-}
+var UserAgentParser = require("ua-parser-js")
 
 var COLORS = {
 	salmon: "#f25648",
 	white: "white"
 }
 
-var updateDefaults = function(defaults, updatedValues) {
-	for (var key in updatedValues) {
-		defaults[key] = updatedValues[key]
-	}
-
-	return defaults
-}
-
 module.exports = function(options) {
 	var main = function() {
 		// Despite the docs, UA needs to be provided to constructor explicitly:
 		// https://github.com/faisalman/ua-parser-js/issues/90
-		var parsedUserAgent = new UserAgentParser(window.navigator.userAgent).getResult()
+		var parsedUserAgent = new UserAgentParser(navigator.userAgent).getResult()
 
 		// Variable definition (before ajax)
 		var outdatedUI = document.getElementById("outdated")
 
+		// Set default options
 		options = options || {}
 
 		var browserLocale = window.navigator.language || window.navigator.userLanguage // Everyone else, IE
-
-		// Set default options
-		var browserSupport = options.browserSupport ? updateDefaults(DEFAULTS, options.browserSupport) : DEFAULTS
 		// CSS property to check for. You may also like 'borderSpacing', 'boxShadow', 'transform', 'borderImage';
-		var requiredCssProperty = options.requiredCssProperty || false
 		var backgroundColor = options.backgroundColor || COLORS.salmon
 		var textColor = options.textColor || COLORS.white
 		var fullscreen = options.fullscreen || false
@@ -64,25 +33,20 @@ module.exports = function(options) {
 		var isAndroid = parsedUserAgent.os.name === "Android"
 		if (isAndroid) {
 			updateSource = "googlePlay"
-		}
-
-		var isAndroidButNotChrome
-		if (options.requireChromeOnAndroid) {
-			isAndroidButNotChrome = isAndroid && parsedUserAgent.browser.name !== "Chrome"
-		}
-
-		if (parsedUserAgent.os.name === "iOS") {
+		} else if  (parsedUserAgent.os.name === "iOS") {
 			updateSource = "appStore"
 		}
 
+		var isBrowserUnsupported = false
+
 		var done = true
 
-		var changeOpacity = function(opacityValue) {
+		var changeOpacity = function (opacityValue) {
 			outdatedUI.style.opacity = opacityValue / 100
 			outdatedUI.style.filter = "alpha(opacity=" + opacityValue + ")"
 		}
-
-		var fadeIn = function(opacityValue) {
+	
+		var fadeIn = function (opacityValue) {
 			changeOpacity(opacityValue)
 			if (opacityValue === 1) {
 				outdatedUI.style.display = "table"
@@ -91,147 +55,57 @@ module.exports = function(options) {
 				done = true
 			}
 		}
-
-		var parseMinorVersion = function (version) {
-			return version.replace(/[^\d.]/g,'').split(".")[1]
-		}
-
-		var isBrowserUnsupported = function() {
-			var browserName = parsedUserAgent.browser.name
-			var isUnsupported = false
-			if (!(browserName in browserSupport)) {
-				if (!options.isUnknownBrowserOK) {
-					isUnsupported = true
-				}
-			} else if (!browserSupport[browserName]) {
-				isUnsupported = true
-			}
-			return isUnsupported
-		}
-
-		var isBrowserOutOfDate = function() {
-			var browserName = parsedUserAgent.browser.name
-			var browserVersion = parsedUserAgent.browser.version
-			var browserMajorVersion = parsedUserAgent.browser.major
-			var osName = parsedUserAgent.os.name
-			var osVersion = parsedUserAgent.os.version
-
-			// Edge legacy needed a version mapping, Edge on Chromium doesn't
-			if (browserName === "Edge" && browserMajorVersion <= 18) {
-				browserMajorVersion = EDGEHTML_VS_EDGE_VERSIONS[browserMajorVersion]
-			}
-
-			// Firefox Mobile on iOS is essentially Mobile Safari so needs to be handled that way
-			// See: https://github.com/mikemaccana/outdated-browser-rework/issues/98#issuecomment-597721173
-			if (browserName === 'Firefox' && osName === 'iOS') {
-				browserName = 'Mobile Safari'
-				browserVersion = osVersion
-				browserMajorVersion = osVersion.substring(0, osVersion.indexOf('.'))
-			}
-
-			var isOutOfDate = false
-			if (isBrowserUnsupported()) {
-				isOutOfDate = true;
-			} else if (browserName in browserSupport) {
-				var minVersion = browserSupport[browserName]
-				if (typeof minVersion == 'object') {
-					var minMajorVersion = minVersion.major
-					var minMinorVersion = minVersion.minor
-
-					if (browserMajorVersion < minMajorVersion) {
-						isOutOfDate = true
-					} else if (browserMajorVersion == minMajorVersion) {
-						var browserMinorVersion = parseMinorVersion(browserVersion)
-
-						if (browserMinorVersion < minMinorVersion) {
-							isOutOfDate = true
-						}
-					}
-				} else if (browserMajorVersion < minVersion) {
-					isOutOfDate = true
-				}
-			}
-			return isOutOfDate
-		}
-
-		// Returns true if a browser supports a css3 property
-		var isPropertySupported = function(property) {
-			if (!property) {
-				return true
-			}
-			var div = document.createElement("div")
-			var vendorPrefixes = ["khtml", "ms", "o", "moz", "webkit"]
-			var count = vendorPrefixes.length
-
-			// Note: HTMLElement.style.hasOwnProperty seems broken in Edge
-			if (property in div.style) {
-				return true
-			}
-
-			property = property.replace(/^[a-z]/, function(val) {
-				return val.toUpperCase()
-			})
-
-			while (count--) {
-				var prefixedProperty = vendorPrefixes[count] + property
-				// See comment re: HTMLElement.style.hasOwnProperty above
-				if (prefixedProperty in div.style) {
-					return true
-				}
-			}
-			return false
-		}
-
-		var makeFadeInFunction = function(opacityValue) {
-			return function() {
+	
+		var makeFadeInFunction = function (opacityValue) {
+			return function () {
 				fadeIn(opacityValue)
 			}
 		}
-
+	
 		// Style element explicitly - TODO: investigate and delete if not needed
-		var startStylesAndEvents = function() {
+		var startStylesAndEvents = function () {
 			var buttonClose = document.getElementById("buttonCloseUpdateBrowser")
 			var buttonUpdate = document.getElementById("buttonUpdateBrowser")
-
+	
 			//check settings attributes
 			outdatedUI.style.backgroundColor = backgroundColor
 			//way too hard to put !important on IE6
 			outdatedUI.style.color = textColor
 			outdatedUI.children[0].children[0].style.color = textColor
 			outdatedUI.children[0].children[1].style.color = textColor
-
+	
 			// Update button is desktop only
 			if (buttonUpdate) {
 				buttonUpdate.style.color = textColor
 				if (buttonUpdate.style.borderColor) {
 					buttonUpdate.style.borderColor = textColor
 				}
-
+	
 				// Override the update button color to match the background color
-				buttonUpdate.onmouseover = function() {
+				buttonUpdate.onmouseover = function () {
 					this.style.color = backgroundColor
 					this.style.backgroundColor = textColor
 				}
-
-				buttonUpdate.onmouseout = function() {
+	
+				buttonUpdate.onmouseout = function () {
 					this.style.color = textColor
 					this.style.backgroundColor = backgroundColor
 				}
 			}
-
+	
 			buttonClose.style.color = textColor
-
-			buttonClose.onmousedown = function() {
+	
+			buttonClose.onmousedown = function () {
 				outdatedUI.style.display = "none"
 				return false
 			}
 		}
-
-		var getmessage = function(lang) {
+	
+		var getMessage = function (lang) {
 			var defaultMessages = languageMessages[lang] || languageMessages.en
 			var customMessages = options.messages && options.messages[lang]
 			var messages = deepExtend({}, defaultMessages, customMessages)
-
+	
 			var updateMessages = {
 				web:
 					"<p>" +
@@ -252,14 +126,14 @@ module.exports = function(options) {
 					"</a></p>",
 				appStore: "<p>" + messages.update[updateSource] + "</p>"
 			}
-
+	
 			var updateMessage = updateMessages[updateSource]
-
+	
 			var browserSupportMessage = messages.outOfDate;
-			if (isBrowserUnsupported() && messages.unsupported) {
+			if (isBrowserUnsupported && messages.unsupported) {
 				browserSupportMessage = messages.unsupported;
 			}
-
+	
 			return (
 				'<div class="vertical-center"><h6>' +
 				browserSupportMessage +
@@ -271,22 +145,24 @@ module.exports = function(options) {
 			)
 		}
 
-		// Check if browser is supported
-		if (isBrowserOutOfDate() || !isPropertySupported(requiredCssProperty) || isAndroidButNotChrome) {
+		var result = evaluateBrowser(parsedUserAgent, options);
+		if (result.isAndroidButNotChrome || result.isBrowserOutOfDate || !result.isPropertySupported) {
 			// This is an outdated browser
+			isBrowserUnsupported = result.isBrowserUnsupported;
+
 			if (done && outdatedUI.style.opacity !== "1") {
 				done = false
-
+	
 				for (var opacity = 1; opacity <= 100; opacity++) {
 					setTimeout(makeFadeInFunction(opacity), opacity * 8)
 				}
 			}
-
+	
 			var insertContentHere = document.getElementById("outdated")
 			if (fullscreen) {
 				insertContentHere.classList.add("fullscreen")
 			}
-			insertContentHere.innerHTML = getmessage(language)
+			insertContentHere.innerHTML = getMessage(language)
 			startStylesAndEvents()
 		}
 	}
