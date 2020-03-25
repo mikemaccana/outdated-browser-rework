@@ -32,17 +32,18 @@ module.exports = function (parsedUserAgent, options) {
 	var browserSupport = options.browserSupport ? updateDefaults(DEFAULTS, options.browserSupport) : DEFAULTS
 	var requiredCssProperty = options.requiredCssProperty || false
 
+	var browserName = parsedUserAgent.browser.name;
+
+	var isAndroidButNotChrome
+	if (options.requireChromeOnAndroid) {
+		isAndroidButNotChrome = parsedUserAgent.os.name === "Android" && parsedUserAgent.browser.name !== "Chrome"
+	}	
+	
 	var parseMinorVersion = function (version) {
 		return version.replace(/[^\d.]/g, '').split(".")[1];
 	}
 
-	var isAndroidButNotChrome
-	if (options.requireChromeOnAndroid) {
-		isAndroidButNotChrome = isAndroid && parsedUserAgent.browser.name !== "Chrome"
-	}
-
 	var isBrowserUnsupported = function () {
-		var browserName = parsedUserAgent.browser.name
 		var isUnsupported = false
 		if (!(browserName in browserSupport)) {
 			if (!options.isUnknownBrowserOK) {
@@ -55,8 +56,8 @@ module.exports = function (parsedUserAgent, options) {
 	}
 
 	var isBrowserUnsupportedResult = isBrowserUnsupported();
+
 	var isBrowserOutOfDate = function () {
-		var browserName = parsedUserAgent.browser.name;
 		var browserVersion = parsedUserAgent.browser.version;
 		var browserMajorVersion = parsedUserAgent.browser.major;
 		var osName = parsedUserAgent.os.name;
@@ -74,8 +75,6 @@ module.exports = function (parsedUserAgent, options) {
 			browserVersion = osVersion;
 			browserMajorVersion = osVersion.substring(0, osVersion.indexOf('.'));
 		}
-
-		debugger;
 
 		var isOutOfDate = false
 		if (isBrowserUnsupportedResult) {
