@@ -37,7 +37,7 @@ module.exports = function(options) {
 			updateSource = "appStore"
 		}
 
-		var isBrowserUnsupported = false
+		var isBrowserUnsupported = false // set later after browser evaluation
 
 		var done = true
 
@@ -147,8 +147,10 @@ module.exports = function(options) {
 
 		var result = evaluateBrowser(parsedUserAgent, options);
 		if (result.isAndroidButNotChrome || result.isBrowserOutOfDate || !result.isPropertySupported) {
-			// This is an outdated browser
-			isBrowserUnsupported = result.isBrowserUnsupported;
+			// This is an outdated browser and the banner needs to show
+
+			// Set this flag with the result for `getMessage`
+			isBrowserUnsupported = result.isBrowserUnsupported
 
 			if (done && outdatedUI.style.opacity !== "1") {
 				done = false
