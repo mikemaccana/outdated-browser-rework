@@ -1,4 +1,26 @@
 {
+	"kr": {
+    "outOfDate": "최신 브라우저가 아닙니다!",
+    "update": {
+      "web": "웹사이트를 제대로 보려면 브라우저를 업데이트하세요.",
+      "googlePlay": "Google Play에서 Chrome을 설치하세요",
+      "appStore": "설정 앱에서 iOS를 업데이트하세요"
+    },
+    "url": "https://browser-update.org/update-browser.html",
+    "callToAction": "지금 브라우저 업데이트하기",
+    "close": "닫기"
+  },
+  "jp": {
+    "outOfDate": "古いブラウザをお使いのようです。",
+    "update": {
+      "web": "ウェブサイトを正しく表示できるように、ブラウザをアップデートしてください。",
+      "googlePlay": "Google PlayからChromeをインストールしてください",
+      "appStore": "設定からiOSをアップデートしてください"
+    },
+    "url": "https://browser-update.org/update-browser.html",
+    "callToAction": "今すぐブラウザをアップデートする",
+    "close": "閉じる"
+  }, 
 	"br": {
 		"outOfDate": "O seu navegador est&aacute; desatualizado!",
 		"update": {
