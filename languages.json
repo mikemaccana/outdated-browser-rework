@@ -1,5 +1,5 @@
 {
-	"kr": {
+	"ko": {
     "outOfDate": "최신 브라우저가 아닙니다!",
     "update": {
       "web": "웹사이트를 제대로 보려면 브라우저를 업데이트하세요.",
@@ -10,7 +10,7 @@
     "callToAction": "지금 브라우저 업데이트하기",
     "close": "닫기"
   },
-  "jp": {
+  "ja": {
     "outOfDate": "古いブラウザをお使いのようです。",
     "update": {
       "web": "ウェブサイトを正しく表示できるように、ブラウザをアップデートしてください。",
@@ -43,7 +43,7 @@
 		"callToAction": "Actualitzar el meu navegador ara",
 		"close": "Tancar"
 	},
-	"cn": {
+	"zh": {
 		"outOfDate": "您的浏览器已过时",
 		"update": {
 			"web": "要正常浏览本网站请升级您的浏览器。",
