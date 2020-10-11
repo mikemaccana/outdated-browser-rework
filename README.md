@@ -141,7 +141,10 @@ Add the required HTML at the end of your document:
 <div id="outdated"></div>
 ```
 
-Yes, [IDs suck](http://2ality.com/2012/08/ids-are-global.html) but old browsers don't support gettting elements by class name.
+Yes, [IDs suck](http://2ality.com/2012/08/ids-are-global.html) but old browsers don't support getting elements by class name.
+
+You should also always use HTML <!DOCTYPE> declaration to tell legacy browsers that you're using full standards mode. Without this it's possible that your page gets loaded in the quirks mode and it will not work with this package.   
+For more information, see: https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode
 
 ## Bundling the JavaScript
 
