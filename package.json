@@ -4,7 +4,7 @@
 	"version": "2.11.0",
 	"main": "index.js",
 	"dependencies": {
-		"ua-parser-js": "^0.7.18"
+		"ua-parser-js": "^0.7.22"
 	},
 	"author": "Mike MacCana <mike.maccana@gmail.com>",
 	"repository": {
