@@ -23,6 +23,8 @@ This module does not need jQuery.
 
 There's a [demo page here where all browsers are unsupported](https://mikemaccana.github.io/outdated-browser-rework/) - this allows you to see the effect! This file is `index.html` in the source.
 
+[Here's a demo you can edit on JSfiddle](https://jsfiddle.net/pnk3o4zq/1/)
+
 ## Usage (with browserify)
 
 ### JS
