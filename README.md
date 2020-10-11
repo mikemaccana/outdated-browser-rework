@@ -75,7 +75,7 @@ outdatedBrowserRework({
 			},
 			// You can set the URL to null if you do not want a clickable link or provide
 			// your own markup in the `update.web` message.
-			url: "http://outdatedbrowser.com/",
+			url: "http://browser-update.org/",
 			callToAction: "Update my browser now",
 			close: "Close"
 		}
@@ -89,7 +89,7 @@ See below for more options.
 
 Browsers that are **older** than the versions supplied, or who use a browser where support is `false`, will see a message, depending on their platform:
 
-- On desktop browsers, users will be directed to [outdatedbrowser.com](http://outdatedbrowser.com)
+- On desktop browsers, users will be directed to [browser-update.org/](https://browser-update.org/)
 - on iOS devices, users will be asked to visit the Settings app and upgrade their OS.
 - On Android devices, users will be directed to Chrome in Google Play.
 
