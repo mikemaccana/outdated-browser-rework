@@ -1,10 +1,10 @@
 {
 	"name": "outdated-browser-rework",
 	"description": "Detects outdated browsers and asks users to upgrade to a new version. Handles mobile devices!",
-	"version": "2.9.0",
+	"version": "3.0.1",
 	"main": "index.js",
 	"dependencies": {
-		"ua-parser-js": "^0.7.18"
+		"ua-parser-js": "^0.7.22"
 	},
 	"author": "Mike MacCana <mike.maccana@gmail.com>",
 	"repository": {
@@ -21,12 +21,15 @@
 	],
 	"devDependencies": {
 		"browserify": "^16.2.3",
-		"node-sass": "^4.9.3",
-		"nodemon": "^1.18.4",
+		"jest": "^26.5.3",
+		"node-sass": "^4.14.1",
+		"nodemon": "^2.0.4",
 		"uglify-js": "^3.4.9"
 	},
+	"license": "MIT",
 	"scripts": {
-		"build": "node-sass style.scss dist/style.css && browserify index.js -d -s outdatedBrowserRework -o dist/outdated-browser-rework.js && uglifyjs dist/outdated-browser-rework.js --ie8 -c -m > dist/outdated-browser-rework.min.js",
-		"watch": "nodemon --exec 'npm run build' --ignore dist"
+		"build": "jest && node-sass style.scss dist/style.css && browserify index.js -d -s outdatedBrowserRework -o dist/outdated-browser-rework.js && uglifyjs dist/outdated-browser-rework.js --ie8 -c -m > dist/outdated-browser-rework.min.js",
+		"watch": "nodemon --exec 'npm run build' --ignore dist",
+		"test": "jest"
 	}
 }

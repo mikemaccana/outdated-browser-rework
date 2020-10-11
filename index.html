@@ -1,32 +1,60 @@
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="dist/style.css">
-		<script src="dist/outdated-browser-rework.min.js"></script>
-		<script>
-			// Since this is a demo page, we disable support for all browsers
-			outdatedBrowserRework({
-				fullscreen: false,
-				browserSupport: {
-					'Chrome': false,
-					'Edge': false,
-					'Safari': false,
-					'Mobile Safari': false,
-					'Firefox': false,
-					'Opera': false,
-					'IE': false
-				}
-			})
-		</script>
-		<style type="text/css">
-			p {
-				font-family: "Open Sans", "Segoe UI", sans-serif;
-				font-size: 24pt;
-			}			
-		</style>
-	</head>
-	<body>
-		<p>This page is a demonstration, showing what a user with an outdated browser will experience.</p>
-		<p>All browsers in this demo are marked not supported, so you'll see it even with new browsers!</p>
-		<div id="outdated"></div>
-	</body>	
+
+<head>
+	<link rel="stylesheet" type="text/css" href="dist/style.css">
+	<script src="dist/outdated-browser-rework.js"></script>
+	<script>
+		// Since this is a demo page, we disable support for all browsers
+		outdatedBrowserRework({
+			fullscreen: false,
+			browserSupport: {
+				'Edge': false,
+				'Chrome': false,
+				'Safari': false,
+				'Mobile Safari': false,
+				'Firefox': false,
+				'Opera': false,
+				'IE': false,
+			}
+		})
+	</script>
+	<style type="text/css">
+		/* Ugly 90s CSS */
+		p {
+			font-family: "Open Sans", "Segoe UI", sans-serif;
+			font-size: 24pt;
+		}
+
+		div.content-wrapper {
+			display: table;
+			width: 100%;
+		}
+
+		div.content {
+			display: table-cell;
+			vertical-align: middle;
+			height: 600px;
+			text-align: center;
+		}
+
+		div.content p {
+			display: inline-block;
+			text-align: center;
+			width: 500px;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Ugly 90s HTML -->
+	<div class="content-wrapper">
+		<div class="content">
+			<p>This page is a demonstration, showing what a user with an outdated browser will experience.
+				<br>
+				<b>All browsers in this demo are marked as not supported</b>, so you'll see it even with new browsers!</p>
+		</div>
+	</div>
+	<div id="outdated"></div>
+</body>
+
 </html>
