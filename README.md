@@ -21,7 +21,7 @@ This module does not need jQuery.
 
 ## Demo
 
-There's a [demo page here where all browsers are unsupported](https://mikemaccana.github.io/outdated-browser-rework/) - this allows you to see the effect!.
+There's a [demo page here where all browsers are unsupported](https://mikemaccana.github.io/outdated-browser-rework/) - this allows you to see the effect! This file is `index.html` in the source.
 
 ## Usage (with browserify)
 
