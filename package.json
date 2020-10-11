@@ -1,7 +1,7 @@
 {
 	"name": "outdated-browser-rework",
 	"description": "Detects outdated browsers and asks users to upgrade to a new version. Handles mobile devices!",
-	"version": "2.10.0",
+	"version": "2.11.0",
 	"main": "index.js",
 	"dependencies": {
 		"ua-parser-js": "^0.7.18"
@@ -21,12 +21,14 @@
 	],
 	"devDependencies": {
 		"browserify": "^16.2.3",
+		"jest": "^25.1.0",
 		"node-sass": "^4.9.3",
 		"nodemon": "^1.18.4",
 		"uglify-js": "^3.4.9"
 	},
 	"scripts": {
-		"build": "node-sass style.scss dist/style.css && browserify index.js -d -s outdatedBrowserRework -o dist/outdated-browser-rework.js && uglifyjs dist/outdated-browser-rework.js --ie8 -c -m > dist/outdated-browser-rework.min.js",
-		"watch": "nodemon --exec 'npm run build' --ignore dist"
+		"build": "jest && node-sass style.scss dist/style.css && browserify index.js -d -s outdatedBrowserRework -o dist/outdated-browser-rework.js && uglifyjs dist/outdated-browser-rework.js --ie8 -c -m > dist/outdated-browser-rework.min.js",
+		"watch": "nodemon --exec 'npm run build' --ignore dist",
+		"test": "jest"
 	}
 }
