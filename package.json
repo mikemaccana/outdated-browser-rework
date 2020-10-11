@@ -21,9 +21,9 @@
 	],
 	"devDependencies": {
 		"browserify": "^16.2.3",
-		"jest": "^25.1.0",
-		"node-sass": "^4.9.3",
-		"nodemon": "^1.18.4",
+		"jest": "^26.5.3",
+		"node-sass": "^4.14.1",
+		"nodemon": "^2.0.4",
 		"uglify-js": "^3.4.9"
 	},
 	"scripts": {
