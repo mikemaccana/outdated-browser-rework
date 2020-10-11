@@ -26,6 +26,7 @@
 		"nodemon": "^2.0.4",
 		"uglify-js": "^3.4.9"
 	},
+	"license": "MIT",
 	"scripts": {
 		"build": "jest && node-sass style.scss dist/style.css && browserify index.js -d -s outdatedBrowserRework -o dist/outdated-browser-rework.js && uglifyjs dist/outdated-browser-rework.js --ie8 -c -m > dist/outdated-browser-rework.min.js",
 		"watch": "nodemon --exec 'npm run build' --ignore dist",
