@@ -22,7 +22,7 @@
 	"devDependencies": {
 		"browserify": "^16.2.3",
 		"jest": "^26.5.3",
-		"node-sass": "^4.14.1",
+		"node-sass": "^7.0.0",
 		"nodemon": "^2.0.4",
 		"uglify-js": "^3.4.9"
 	},
